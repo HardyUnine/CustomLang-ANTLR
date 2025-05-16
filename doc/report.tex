@@ -1,0 +1,114 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[left=3cm, right=3cm, top=3cm, bottom=3cm]{geometry}
+\usepackage{enumitem}
+\usepackage{amsmath,amsfonts,amssymb}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{float} % for [H] positioning
+\usepackage{booktabs}
+\renewcommand{\baselinestretch}{1}
+\usepackage[nottoc,notlof,notlot,numbib]{tocbibind}
+\usepackage{caption}
+\usepackage{dirtytalk}
+\usepackage{float}
+\usepackage{pdfpages}
+\usepackage{dcolumn}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage[hyphens]{url}
+\usepackage{nicefrac, xfrac}
+\usepackage{setspace}
+\usepackage{caption}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage[backend=biber,style=authoryear,]{biblatex}
+\addbibresource{bibliography.bib}
+% \captionsetup[figure]{font=footnotesize}
+\usepackage[bottom,flushmargin]{footmisc}
+\renewcommand{\footnotelayout}{\setstretch{1}}
+\setlength{\footnotesep}{\baselineskip}
+\usepackage{hyperref}
+\usepackage[english]{babel}
+\usepackage{listings}
+\usepackage{xcolor}
+\usepackage{fancyhdr}
+\usepackage{minted}  
+\usepackage{csquotes}
+\usepackage[backend=biber]{biblatex}
+\addbibresource{bibliography.bib}
+
+
+\pagestyle{fancy} % Use the fancy header style
+%\fancyhf{} % Clear all default header and footer settings
+\setlength{\headheight}{14.49998pt}
+\addtolength{\topmargin}{-2.49998pt}
+\fancyhead[L]{Statistical Learning} % Left side of the header
+\fancyhead[R]{Groupe Faro} % Right side of the header
+
+
+
+\lstset{
+    language=R, 
+    basicstyle=\ttfamily\footnotesize,
+    keywordstyle=\color{blue}\bfseries,
+    stringstyle=\color{orange},
+    commentstyle=\color{green!60!black},
+    showstringspaces=false,
+    frame=single,
+    breaklines=true,
+    frame=none, 
+    numbers=none, 
+}
+\lstset{
+  frame=none, % Removes the box frame
+  numbers=none, % Removes line numbers if they're present
+}
+\addto\captionsenglish{
+	\renewcommand{\contentsname}%
+	{Table of Content}%
+	\renewcommand{\abstractname}%
+	{Executive Summary}%
+}
+%
+%
+\def\UrlFont{\rm}
+\sloppy
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{\baselineskip}
+
+
+\begin{document}
+\pagenumbering{roman}
+
+\begin{titlepage}
+    \centering
+    \includegraphics[width=0.3\textwidth]{doc/logo.png}\vspace{0.5cm}
+
+    {\scshape\LARGE Université de Neuchâtel \par}
+    \vspace{1cm}
+    {\scshape\Large Faculty of Science \par}
+    \vspace{1.5cm}
+
+    {\Huge\bfseries Custom Language ANTLR4 \par}
+
+    {\Large\itshape Language et Compilation - Projet \par}
+    \vspace{1cm}
+
+            \textbf{Supervised by}\\
+            PHD Candidate Pasquale de Rosa
+    \vfill
+
+    {\large Bachelor of Science in Data Science\par}
+    \vspace{0.5cm}
+
+    {\large \bfseries Authors and student numbers:}\\[0.2cm]
+    Angeliki Andreadi / 23-505-894 \\
+    Tim Gouvernon / 23-506-348 \\
+    Keenan Hardy / 23-501-612 \\
+    \vfill
+
+    {\large Neuchâtel, June 2025\par}
+\end{titlepage}
+
+\newpage
+\end{document}
