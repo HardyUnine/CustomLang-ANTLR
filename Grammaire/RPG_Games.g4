@@ -8,8 +8,8 @@
 program: 
 statement* EOF; // End Of File
 
-statement: assignement|
-playerDecl
+statement: assignement
+|playerDecl
 |statsUpdate
 |removeInventory
 |addInventory
@@ -25,7 +25,7 @@ agility : NUMBER;
 intelligence: NUMBER;
 hp: NUMBER;
 
-stat: STRENGTH|INTELLIGENCE|AGIL|HP
+stat: STRENGTH|INTELLIGENCE|AGIL|HP;
 
 weapon: SWORD|BOW|STAFF;
 
