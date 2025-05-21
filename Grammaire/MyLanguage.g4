@@ -11,23 +11,34 @@ statement* EOF; // End Of File
 statement: assignement|playerDecl;
 
 // un id(nom de variable) = une valeur entière
-assignement: 
-ID EQ NUMBER;
+assignement: ID EQ NUMBER;
 
-// fonction player nom joueur {hp = 12 etc }
-playerDecl: 
-PLAYER EQ NAME; 
+
+strength: NUMBER;
+agility : NUMBER;
+intelligence: NUMBER
+
+weapon: SWORD|BOW|STAFF;
+
+// fonction declaration
+playerDecl: SUMMON '('NAME ',' strength ',' intelligence ',' agility ',' weapon')'; 
+
 
 
 // ---------------------------------------------------------------------------------------
 // Lexer
 // ---------------------------------------------------------------------------------------
 // NOM: 'définition' ou regexp, qu'est ce que ça peut etre 
-PLAYER: 'player'; //dès que antlr lit le mot player il créer un token PLAYER
+PLAYER: 'SUMMON'; //dès que antlr lit le mot player il créer un token PLAYER
+
+ASSIGN: '';
 
 ROLL : 'roll';
 
-ARROW : '->'; //en signe d'attaque ?
+SWORD : 'sword';
+BOW : 'bow';
+STAFF: 'staff';
+
 
 NUMBER : [0-9]+;
 HP: [0-9]+;
@@ -39,3 +50,7 @@ EQ: '=';
 
 CURLYL : '{';
 CURLYR : '}';
+
+PARL : '(';
+PARR : ')';
+
