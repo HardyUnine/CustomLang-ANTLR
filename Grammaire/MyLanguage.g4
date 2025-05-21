@@ -16,7 +16,7 @@ ID EQ NUMBER;
 
 // fonction player nom joueur {hp = 12 etc }
 playerDecl: 
-PLAYER ID CURLYL assignement* CURLYR; 
+PLAYER EQ NAME; 
 
 
 // ---------------------------------------------------------------------------------------
@@ -30,7 +30,9 @@ ROLL : 'roll';
 ARROW : '->'; //en signe d'attaque ?
 
 NUMBER : [0-9]+;
+HP: [0-9]+;
 
+NAME: [a-zA-Z_];
 ID : [a-zA-Z_][a-zA-Z_0-9]*;
 
 EQ: '=';
