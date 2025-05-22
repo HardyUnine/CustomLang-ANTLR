@@ -92,7 +92,7 @@ class RPG_GamesLexer(Lexer):
     BOW = 12
     STAFF = 13
     STRENGTH = 14
-    AGIL = 15
+    AGILITY = 15
     INTELLIGENCE = 16
     HP = 17
     ITEM = 18
@@ -111,12 +111,12 @@ class RPG_GamesLexer(Lexer):
 
     symbolicNames = [ "<INVALID>",
             "CREATE", "DEL", "GET", "UPDATE", "PRINTINV", "PRINTCAR", "ROLL", 
-            "SWORD", "BOW", "STAFF", "STRENGTH", "AGIL", "INTELLIGENCE", 
+            "SWORD", "BOW", "STAFF", "STRENGTH", "AGILITY", "INTELLIGENCE", 
             "HP", "ITEM", "NUMBER", "NAME", "WS" ]
 
     ruleNames = [ "T__0", "T__1", "T__2", "CREATE", "DEL", "GET", "UPDATE", 
                   "PRINTINV", "PRINTCAR", "ROLL", "SWORD", "BOW", "STAFF", 
-                  "STRENGTH", "AGIL", "INTELLIGENCE", "HP", "ITEM", "NUMBER", 
+                  "STRENGTH", "AGILITY", "INTELLIGENCE", "HP", "ITEM", "NUMBER", 
                   "NAME", "WS" ]
 
     grammarFileName = "RPG_Games.g4"

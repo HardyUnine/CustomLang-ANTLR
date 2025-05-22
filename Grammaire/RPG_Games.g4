@@ -1,5 +1,10 @@
  grammar RPG_Games; // Définit nom de la grammaire
 
+// TO UPDATE INTERPRETER 
+// (Assuming your are pointing to Grammaire):
+// antlr4 -Dlanguage=Python3 -visitor -o ..\Interpreter\g4 RPG_Games.g4 
+
+
 //---------------------------------------------------------------------------------------
 // Parser
 //---------------------------------------------------------------------------------------
@@ -37,7 +42,7 @@ poof: DEL '(' NAME ')';
 
 weapon: SWORD | BOW | STAFF;
 
-stat: STRENGTH | INTELLIGENCE | AGIL | HP;
+stat: STRENGTH | INTELLIGENCE | AGILITY | HP;
 
 strength: NUMBER;
 agility : NUMBER;
@@ -61,7 +66,7 @@ BOW : 'bow';
 STAFF: 'staff';
 
 STRENGTH : 'strength';
-AGIL : 'agility';
+AGILITY : 'agility';
 INTELLIGENCE: 'intelligence';
 HP : 'hp';
 

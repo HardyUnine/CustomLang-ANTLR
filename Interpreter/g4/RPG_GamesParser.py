@@ -62,7 +62,7 @@ class RPG_GamesParser ( Parser ):
 
     symbolicNames = [ "<INVALID>", "<INVALID>", "<INVALID>", "<INVALID>", 
                       "CREATE", "DEL", "GET", "UPDATE", "PRINTINV", "PRINTCAR", 
-                      "ROLL", "SWORD", "BOW", "STAFF", "STRENGTH", "AGIL", 
+                      "ROLL", "SWORD", "BOW", "STAFF", "STRENGTH", "AGILITY", 
                       "INTELLIGENCE", "HP", "ITEM", "NUMBER", "NAME", "WS" ]
 
     RULE_program = 0
@@ -101,7 +101,7 @@ class RPG_GamesParser ( Parser ):
     BOW=12
     STAFF=13
     STRENGTH=14
-    AGIL=15
+    AGILITY=15
     INTELLIGENCE=16
     HP=17
     ITEM=18
@@ -831,8 +831,8 @@ class RPG_GamesParser ( Parser ):
         def INTELLIGENCE(self):
             return self.getToken(RPG_GamesParser.INTELLIGENCE, 0)
 
-        def AGIL(self):
-            return self.getToken(RPG_GamesParser.AGIL, 0)
+        def AGILITY(self):
+            return self.getToken(RPG_GamesParser.AGILITY, 0)
 
         def HP(self):
             return self.getToken(RPG_GamesParser.HP, 0)
