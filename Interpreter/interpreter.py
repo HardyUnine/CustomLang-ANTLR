@@ -20,7 +20,7 @@ class RPGInterpreter(RPG_GamesVisitor):
         strength = self.visit(ctx.strength())
         intel = self.visit(ctx.intelligence())
         agi = self.visit(ctx.agility())
-        weapon = self.visit(ctx.weapon())
+        weapon = ctx.weapon().getText()
 
         self.player[name] = {'hp': hp,
                              'strength': strength,
@@ -31,6 +31,18 @@ class RPGInterpreter(RPG_GamesVisitor):
         
         return self.player
     
+    def visitHp(self, ctx: RPG_GamesParser.HpContext):
+        return int(ctx.NUMBER().getText())
+    
+    def visitStrength(self, ctx: RPG_GamesParser.StrengthContext):
+        return int(ctx.NUMBER().getText())
+    
+    def visitIntelligence(self, ctx: RPG_GamesParser.IntelligenceContext):
+        return int(ctx.NUMBER().getText())
+
+    def visitAgility(self, ctx: RPG_GamesParser.AgilityContext):
+        return int(ctx.NUMBER().getText())
+
     def visitStatsUpdate(self, ctx: RPG_GamesParser.StatsUpdateContext):
         return super().visitStatsUpdate(ctx)
     
