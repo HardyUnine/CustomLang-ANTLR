@@ -26,69 +26,6 @@ class RPG_GamesListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by RPG_GamesParser#assignement.
-    def enterAssignement(self, ctx:RPG_GamesParser.AssignementContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#assignement.
-    def exitAssignement(self, ctx:RPG_GamesParser.AssignementContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#strength.
-    def enterStrength(self, ctx:RPG_GamesParser.StrengthContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#strength.
-    def exitStrength(self, ctx:RPG_GamesParser.StrengthContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#agility.
-    def enterAgility(self, ctx:RPG_GamesParser.AgilityContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#agility.
-    def exitAgility(self, ctx:RPG_GamesParser.AgilityContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#intelligence.
-    def enterIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#intelligence.
-    def exitIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#hp.
-    def enterHp(self, ctx:RPG_GamesParser.HpContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#hp.
-    def exitHp(self, ctx:RPG_GamesParser.HpContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#stat.
-    def enterStat(self, ctx:RPG_GamesParser.StatContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#stat.
-    def exitStat(self, ctx:RPG_GamesParser.StatContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#weapon.
-    def enterWeapon(self, ctx:RPG_GamesParser.WeaponContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#weapon.
-    def exitWeapon(self, ctx:RPG_GamesParser.WeaponContext):
-        pass
-
-
     # Enter a parse tree produced by RPG_GamesParser#playerDecl.
     def enterPlayerDecl(self, ctx:RPG_GamesParser.PlayerDeclContext):
         pass
@@ -149,6 +86,60 @@ class RPG_GamesListener(ParseTreeListener):
 
     # Exit a parse tree produced by RPG_GamesParser#poof.
     def exitPoof(self, ctx:RPG_GamesParser.PoofContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#weapon.
+    def enterWeapon(self, ctx:RPG_GamesParser.WeaponContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#weapon.
+    def exitWeapon(self, ctx:RPG_GamesParser.WeaponContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#stat.
+    def enterStat(self, ctx:RPG_GamesParser.StatContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#stat.
+    def exitStat(self, ctx:RPG_GamesParser.StatContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#strength.
+    def enterStrength(self, ctx:RPG_GamesParser.StrengthContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#strength.
+    def exitStrength(self, ctx:RPG_GamesParser.StrengthContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#agility.
+    def enterAgility(self, ctx:RPG_GamesParser.AgilityContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#agility.
+    def exitAgility(self, ctx:RPG_GamesParser.AgilityContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#intelligence.
+    def enterIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#intelligence.
+    def exitIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#hp.
+    def enterHp(self, ctx:RPG_GamesParser.HpContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#hp.
+    def exitHp(self, ctx:RPG_GamesParser.HpContext):
         pass
 
 

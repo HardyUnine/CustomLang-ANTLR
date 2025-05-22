@@ -8,47 +8,51 @@
 program: 
 statement* EOF; // End Of File
 
-statement: assignement
-|playerDecl
-|statsUpdate
-|removeInventory
-|addInventory
-|inInventory
-|summary
-|poof;
+statement: playerDecl
+| statsUpdate
+| addInventory
+| removeInventory
+| inInventory
+| summary
+| poof; //assignement
 
 // un id(nom de variable) = une valeur entière
-assignement: ID EQ NUMBER;
+// assignement: ID EQ NUMBER;
+
+// fonction declaration
+
+playerDecl:  CREATE '(' NAME ',' hp ',' strength ',' intelligence ',' agility',' weapon')'; 
+
+statsUpdate: UPDATE '(' NAME ',' stat ',' NUMBER ')';
+
+addInventory : GET '(' NAME ',' ITEM ')';
+
+removeInventory : DEL '(' NAME ',' ITEM ')';
+
+inInventory: PRINTINV '(' NAME ')';
+
+summary: PRINTCAR '(' NAME ')';
+
+poof: DEL '(' NAME ')';
+
+weapon: SWORD | BOW | STAFF;
+
+stat: STRENGTH | INTELLIGENCE | AGIL | HP;
 
 strength: NUMBER;
 agility : NUMBER;
 intelligence: NUMBER;
 hp: NUMBER;
-
-stat: STRENGTH|INTELLIGENCE|AGIL|HP;
-
-weapon: SWORD|BOW|STAFF;
-
-// fonction declaration
-
-playerDecl:  SUMMON'('NAME ',' hp ',' strength ',' intelligence ',' agility',' weapon')'; 
-
-statsUpdate: ALTERATION '(' NAME ',' stat ',' NUMBER ')';
-
-addInventory : AQUIRE '(' NAME ',' ITEM ')';
-
-removeInventory : POOF '(' NAME ',' ITEM ')';
-
-inInventory: WhatsInMyBag '(' NAME ')';
-
-summary: SUMMAWY '(' NAME ')';
-
-poof: POOF '(' NAME ')';
 // ---------------------------------------------------------------------------------------
 // Lexer
 // ---------------------------------------------------------------------------------------
 // NOM: 'définition' ou regexp, qu'est ce que ça peut etre 
-SUMMON: 'SUMMON'; //dès que antlr lit le mot player il créer un token PLAYER
+CREATE: 'SUMMON'; //dès que antlr lit le mot player il créer un token PLAYER
+DEL: 'POOF';
+GET: 'AQUIRE';
+UPDATE: 'ALTERATE';
+PRINTINV: 'WhatsInMyBag';
+PRINTCAR: 'SUMMAWY';
 
 ROLL : 'roll';
 

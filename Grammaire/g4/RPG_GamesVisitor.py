@@ -19,41 +19,6 @@ class RPG_GamesVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by RPG_GamesParser#assignement.
-    def visitAssignement(self, ctx:RPG_GamesParser.AssignementContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#strength.
-    def visitStrength(self, ctx:RPG_GamesParser.StrengthContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#agility.
-    def visitAgility(self, ctx:RPG_GamesParser.AgilityContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#intelligence.
-    def visitIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#hp.
-    def visitHp(self, ctx:RPG_GamesParser.HpContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#stat.
-    def visitStat(self, ctx:RPG_GamesParser.StatContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#weapon.
-    def visitWeapon(self, ctx:RPG_GamesParser.WeaponContext):
-        return self.visitChildren(ctx)
-
-
     # Visit a parse tree produced by RPG_GamesParser#playerDecl.
     def visitPlayerDecl(self, ctx:RPG_GamesParser.PlayerDeclContext):
         return self.visitChildren(ctx)
@@ -86,6 +51,36 @@ class RPG_GamesVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by RPG_GamesParser#poof.
     def visitPoof(self, ctx:RPG_GamesParser.PoofContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#weapon.
+    def visitWeapon(self, ctx:RPG_GamesParser.WeaponContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#stat.
+    def visitStat(self, ctx:RPG_GamesParser.StatContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#strength.
+    def visitStrength(self, ctx:RPG_GamesParser.StrengthContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#agility.
+    def visitAgility(self, ctx:RPG_GamesParser.AgilityContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#intelligence.
+    def visitIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#hp.
+    def visitHp(self, ctx:RPG_GamesParser.HpContext):
         return self.visitChildren(ctx)
 
 
