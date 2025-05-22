@@ -7,7 +7,10 @@ from g4.RPG_GamesVisitor import RPG_GamesVisitor
 
 class RPGInterpreter(RPG_GamesVisitor):
     def __init__(self):
-        self.player = {}
+        self.player = {
+            'Igor' : {'hp': 0,
+                      'strength': 2}
+        }
 
     def visitProgram(self, ctx: RPG_GamesParser.ProgramContext):
         for stmt in ctx.statement():
@@ -20,13 +23,14 @@ class RPGInterpreter(RPG_GamesVisitor):
         strength = self.visit(ctx.strength())
         intel = self.visit(ctx.intelligence())
         agi = self.visit(ctx.agility())
-        weapon = ctx.weapon().getText()
+        weapon = self.visit(ctx.weapon())
 
         self.player[name] = {'hp': hp,
                              'strength': strength,
                              'intelligence': intel,
                              'agility': agi,
-                             'weapon': weapon
+                             'weapon': weapon,
+                             'inventory': {}
                              }
         
         return self.player
@@ -42,23 +46,70 @@ class RPGInterpreter(RPG_GamesVisitor):
 
     def visitAgility(self, ctx: RPG_GamesParser.AgilityContext):
         return int(ctx.NUMBER().getText())
+    
+    def visitWeapon(self, ctx: RPG_GamesParser.WeaponContext):
+        return ctx.getChild(0).getText()
 
     def visitStatsUpdate(self, ctx: RPG_GamesParser.StatsUpdateContext):
-        return super().visitStatsUpdate(ctx)
+        name = ctx.NAME().getText()
+        if name not in self.player:
+            raise NameError(f"{name} is not a listed player")
+        stat = ctx.stat().getText()
+        value = int(ctx.NUMBER.getText())
+        self.player[name][stat] = value
+        return self.player
     
     def visitAddInventory(self, ctx: RPG_GamesParser.AddInventoryContext):
-        return super().visitAddInventory(ctx)
+        name = ctx.NAME().getText()
+        if name not in self.player:
+            raise NameError(f"{name} is not a listed player")
+        item = ctx.ITEM().getText()
+        if item in self.player[name]['inventory']:
+            self.player[name]['inventory'][item]+= 1
+        self.player[name]['inventory'][item] = 1
+        return self.player
     
     def visitRemoveInventory(self, ctx: RPG_GamesParser.RemoveInventoryContext):
-        return super().visitRemoveInventory(ctx)
+        name = ctx.NAME().getText()
+        if name not in self.player:
+            raise ValueError(f"{name} is not a listed player")
+        item = ctx.ITEM().getText()
+        if item not in self.player[name]['inventory']:
+            raise ValueError(f"{name} never had {item}")
+        self.player[name]['inventory'][item]-= 1
+        if self.player[name]['inventory'][item] == 0:
+            self.player[name]['inventory'].pop(item)
+        return self.player
     
     def visitInInventory(self, ctx: RPG_GamesParser.InInventoryContext):
-        return super().visitInInventory(ctx)
+        name = ctx.NAME().getText()
+        if name not in self.player:
+            raise ValueError(f"{name} is not a listed player")
+        inv = ""
+        for key, val in self.player[name]['inventory'].items():
+            inv+= f'{key}: {val}\n'
+        print(f"{name} has:\n{inv if inv != "" else "Nothing!"}")
+        # whattoreturn??
+        
     
     def visitSummary(self, ctx: RPG_GamesParser.SummaryContext):
-        return super().visitSummary(ctx)
-    
+        name = ctx.NAME().getText()
+        if name not in self.player:
+            raise ValueError(f"{name} is not a listed player")
+        inv = ""
+        for key, val in self.player[name].items():
+            if key == 'inventory':
+                continue
+            inv+= f'{key}: {val}\n'
+        print(f"{name} stats:\n{inv}")
+        # whattoreturnthesequel
+        
+
     def visitPoof(self, ctx: RPG_GamesParser.PoofContext):
-        return super().visitPoof(ctx)
+        name = ctx.NAME().getText()
+        if name not in self.player:
+            raise ValueError(f"{name} is not poofable")
+        self.player.pop(name)
+        return self.player
 
     
