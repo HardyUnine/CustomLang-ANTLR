@@ -9,7 +9,12 @@ class RPGInterpreter(RPG_GamesVisitor):
     def __init__(self):
         self.player = {
             'Igor' : {'hp': 0,
-                      'strength': 2}
+                      'strength': 2,
+                      'intelligence': 3,
+                      'agility': 5,
+                      'weapon': "bow",
+                      'inventory': {}
+                      }
         }
 
     def visitProgram(self, ctx: RPG_GamesParser.ProgramContext):
@@ -23,7 +28,7 @@ class RPGInterpreter(RPG_GamesVisitor):
         strength = self.visit(ctx.strength())
         intel = self.visit(ctx.intelligence())
         agi = self.visit(ctx.agility())
-        weapon = self.visit(ctx.weapon())
+        weapon = ctx.weapon().getText()
 
         self.player[name] = {'hp': hp,
                              'strength': strength,
@@ -33,7 +38,7 @@ class RPGInterpreter(RPG_GamesVisitor):
                              'inventory': {}
                              }
         
-        return self.player
+        return self.player[name]
     
     def visitHp(self, ctx: RPG_GamesParser.HpContext):
         return int(ctx.NUMBER().getText())
@@ -55,14 +60,14 @@ class RPGInterpreter(RPG_GamesVisitor):
         if name not in self.player:
             raise NameError(f"{name} is not a listed player")
         stat = ctx.stat().getText()
-        value = int(ctx.NUMBER.getText())
+        value = int(ctx.NUMBER().getText())
         self.player[name][stat] = value
         return self.player
     
     def visitAddInventory(self, ctx: RPG_GamesParser.AddInventoryContext):
         name = ctx.NAME().getText()
         if name not in self.player:
-            raise NameError(f"{name} is not a listed player")
+            raise ValueError(f"{name} is not a listed player")
         item = ctx.ITEM().getText()
         if item in self.player[name]['inventory']:
             self.player[name]['inventory'][item]+= 1
@@ -88,8 +93,8 @@ class RPGInterpreter(RPG_GamesVisitor):
         inv = ""
         for key, val in self.player[name]['inventory'].items():
             inv+= f'{key}: {val}\n'
-        print(f"{name} has:\n{inv if inv != "" else "Nothing!"}")
-        # whattoreturn??
+        # print(f"{name} has:\n{inv if inv != "" else "Nothing!"}")
+        return f"{name} has:\n{inv if inv != "" else "Nothing!"}"
         
     
     def visitSummary(self, ctx: RPG_GamesParser.SummaryContext):
@@ -101,8 +106,8 @@ class RPGInterpreter(RPG_GamesVisitor):
             if key == 'inventory':
                 continue
             inv+= f'{key}: {val}\n'
-        print(f"{name} stats:\n{inv}")
-        # whattoreturnthesequel
+        # print(f"{name} stats:\n{inv}")
+        return f"{name} stats:\n{inv}"
         
 
     def visitPoof(self, ctx: RPG_GamesParser.PoofContext):
@@ -112,4 +117,25 @@ class RPGInterpreter(RPG_GamesVisitor):
         self.player.pop(name)
         return self.player
 
-    
+# Main entry point of the program
+if __name__ == "__main__":
+    # Infinite loop to continuously accept user input
+    while True:
+        try:
+            # Prompt the user for input
+            text = input("> ")
+            # Initialize the lexer with the input text
+            lexer = RPG_GamesLexer(InputStream(text))
+            # Create a token stream from the lexer
+            stream = CommonTokenStream(lexer)
+            # Initialize the parser with the token stream
+            parser = RPG_GamesParser(stream)
+            # Parse the expression to generate the parse tree
+            tree = parser.statement()
+            # Create an instance of the Basic visitor
+            calc = RPGInterpreter()
+            # Visit the parse tree and print the evaluation result
+            print(calc.visit(tree))
+        # Handle end of file (EOF) or keyboard interrupt (Ctrl + C) to exit the loop
+        except (EOFError, KeyboardInterrupt):
+            break
