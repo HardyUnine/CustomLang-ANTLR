@@ -25,7 +25,8 @@ statement: playerDecl
 
 // fonction declaration
 
-playerDecl:  CREATE '(' NAME ',' hp ',' strength ',' intelligence ',' agility',' weapon')'; 
+//playerDecl:  CREATE '(' NAME ',' hp ',' strength ',' intelligence ',' agility',' weapon')'; 
+playerDecl:  CREATE '(' NAME ',' race ',' class ')'; 
 
 statsUpdate: UPDATE '(' NAME ',' stat ',' NUMBER ')';
 
@@ -39,14 +40,21 @@ summary: PRINTCAR '(' NAME ')';
 
 poof: DEL '(' NAME ')';
 
+diceRoll: DICEROLL '(' NUMBER ')';
+
 weapon: SWORD | BOW | STAFF;
 
 stat: STRENGTH | INTELLIGENCE | AGILITY | HP;
+
+race: DWARF | HUMAN | ELF;
+
+class: PALADIN | WIZARD | RANGER ;
 
 strength: NUMBER;
 agility : NUMBER;
 intelligence: NUMBER;
 hp: NUMBER;
+
 // ---------------------------------------------------------------------------------------
 // Lexer
 // ---------------------------------------------------------------------------------------
@@ -57,6 +65,7 @@ GET: 'AQUIRE';
 UPDATE: 'ALTERATE';
 PRINTINV: 'WhatsInMyBag';
 PRINTCAR: 'SUMMAWY';
+DICEROLL: 'ROLL'
 
 ROLL : 'roll';
 
@@ -68,6 +77,9 @@ STRENGTH : 'strength';
 AGILITY : 'agility';
 INTELLIGENCE: 'intelligence';
 HP : 'hp';
+
+
+ITEM: [a-zA-Z_][a-zA-Z_0-9]*;
 
 NUMBER : [0-9]+;
 
