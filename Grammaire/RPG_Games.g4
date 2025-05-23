@@ -1,4 +1,4 @@
- grammar RPG_Games; // Définit nom de la grammaire
+grammar RPG_Games; // Définit nom de la grammaire
 
 // TO UPDATE INTERPRETER 
 // (Assuming your are pointing to Grammaire):
@@ -10,8 +10,7 @@
 //---------------------------------------------------------------------------------------
 
 // entrée dans le programme
-program: 
-statement* EOF; // End Of File
+program: statement* EOF; // End Of File
 
 statement: playerDecl
 | statsUpdate
@@ -70,12 +69,10 @@ AGILITY : 'agility';
 INTELLIGENCE: 'intelligence';
 HP : 'hp';
 
-
-ITEM: [a-zA-Z_][a-zA-Z_0-9]*;
-
 NUMBER : [0-9]+;
 
 NAME: [a-zA-Z_]+;
+ITEM: [a-zA-Z_][a-zA-Z_0-9]*;
 
 // Whitespace
 WS: [ \t\r\n]+ -> skip;
