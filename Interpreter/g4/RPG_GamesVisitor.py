@@ -54,6 +54,11 @@ class RPG_GamesVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by RPG_GamesParser#diceRoll.
+    def visitDiceRoll(self, ctx:RPG_GamesParser.DiceRollContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by RPG_GamesParser#weapon.
     def visitWeapon(self, ctx:RPG_GamesParser.WeaponContext):
         return self.visitChildren(ctx)
@@ -64,23 +69,13 @@ class RPG_GamesVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by RPG_GamesParser#strength.
-    def visitStrength(self, ctx:RPG_GamesParser.StrengthContext):
+    # Visit a parse tree produced by RPG_GamesParser#race.
+    def visitRace(self, ctx:RPG_GamesParser.RaceContext):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by RPG_GamesParser#agility.
-    def visitAgility(self, ctx:RPG_GamesParser.AgilityContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#intelligence.
-    def visitIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#hp.
-    def visitHp(self, ctx:RPG_GamesParser.HpContext):
+    # Visit a parse tree produced by RPG_GamesParser#classes.
+    def visitClasses(self, ctx:RPG_GamesParser.ClassesContext):
         return self.visitChildren(ctx)
 
 

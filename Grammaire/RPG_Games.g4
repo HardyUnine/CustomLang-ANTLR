@@ -18,7 +18,8 @@ statement: playerDecl
 | removeInventory
 | inInventory
 | summary
-| poof; //assignement
+| poof
+| diceRoll; //assignement
 
 // un id(nom de variable) = une valeur entière
 // assignement: ID EQ NUMBER;
@@ -26,7 +27,7 @@ statement: playerDecl
 // fonction declaration
 
 //playerDecl:  CREATE '(' NAME ',' hp ',' strength ',' intelligence ',' agility',' weapon')'; 
-playerDecl:  CREATE '(' NAME ',' race ',' class ')'; 
+playerDecl:  CREATE '(' NAME ',' race ',' classes ')'; 
 
 statsUpdate: UPDATE '(' NAME ',' stat ',' NUMBER ')';
 
@@ -48,12 +49,12 @@ stat: STRENGTH | INTELLIGENCE | AGILITY | HP;
 
 race: DWARF | HUMAN | ELF;
 
-class: PALADIN | WIZARD | RANGER ;
+classes: PALADIN | WIZARD | RANGER;
 
-strength: NUMBER;
-agility : NUMBER;
-intelligence: NUMBER;
-hp: NUMBER;
+// strength: NUMBER;
+// agility : NUMBER;
+// intelligence: NUMBER;
+// hp: NUMBER;
 
 // ---------------------------------------------------------------------------------------
 // Lexer
@@ -65,9 +66,7 @@ GET: 'AQUIRE';
 UPDATE: 'ALTERATE';
 PRINTINV: 'WhatsInMyBag';
 PRINTCAR: 'SUMMAWY';
-DICEROLL: 'ROLL'
-
-ROLL : 'roll';
+DICEROLL: 'ROLL';
 
 SWORD : 'sword';
 BOW : 'bow';
@@ -78,13 +77,20 @@ AGILITY : 'agility';
 INTELLIGENCE: 'intelligence';
 HP : 'hp';
 
+DWARF: 'Dwarf';
+HUMAN: 'Human';
+ELF: 'Elf';
+
+PALADIN: 'Paladin';
+WIZARD: 'Wizard';
+RANGER: 'Ranger';
+
 
 ITEM: [a-zA-Z_][a-zA-Z_0-9]*;
 
 NUMBER : [0-9]+;
 
 NAME: [a-zA-Z_]+;
-ITEM: [a-zA-Z_][a-zA-Z_0-9]*;
 
 // Whitespace
 WS: [ \t\r\n]+ -> skip;

@@ -89,6 +89,15 @@ class RPG_GamesListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by RPG_GamesParser#diceRoll.
+    def enterDiceRoll(self, ctx:RPG_GamesParser.DiceRollContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#diceRoll.
+    def exitDiceRoll(self, ctx:RPG_GamesParser.DiceRollContext):
+        pass
+
+
     # Enter a parse tree produced by RPG_GamesParser#weapon.
     def enterWeapon(self, ctx:RPG_GamesParser.WeaponContext):
         pass
@@ -107,39 +116,21 @@ class RPG_GamesListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by RPG_GamesParser#strength.
-    def enterStrength(self, ctx:RPG_GamesParser.StrengthContext):
+    # Enter a parse tree produced by RPG_GamesParser#race.
+    def enterRace(self, ctx:RPG_GamesParser.RaceContext):
         pass
 
-    # Exit a parse tree produced by RPG_GamesParser#strength.
-    def exitStrength(self, ctx:RPG_GamesParser.StrengthContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#agility.
-    def enterAgility(self, ctx:RPG_GamesParser.AgilityContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#agility.
-    def exitAgility(self, ctx:RPG_GamesParser.AgilityContext):
+    # Exit a parse tree produced by RPG_GamesParser#race.
+    def exitRace(self, ctx:RPG_GamesParser.RaceContext):
         pass
 
 
-    # Enter a parse tree produced by RPG_GamesParser#intelligence.
-    def enterIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
+    # Enter a parse tree produced by RPG_GamesParser#classes.
+    def enterClasses(self, ctx:RPG_GamesParser.ClassesContext):
         pass
 
-    # Exit a parse tree produced by RPG_GamesParser#intelligence.
-    def exitIntelligence(self, ctx:RPG_GamesParser.IntelligenceContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#hp.
-    def enterHp(self, ctx:RPG_GamesParser.HpContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#hp.
-    def exitHp(self, ctx:RPG_GamesParser.HpContext):
+    # Exit a parse tree produced by RPG_GamesParser#classes.
+    def exitClasses(self, ctx:RPG_GamesParser.ClassesContext):
         pass
 
 
