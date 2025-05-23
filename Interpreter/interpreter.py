@@ -38,7 +38,7 @@ class RPGInterpreter(RPG_GamesVisitor):
                              'inventory': {}
                              }
         
-        return self.player[name]
+        return self.player
     
     def visitHp(self, ctx: RPG_GamesParser.HpContext):
         return int(ctx.NUMBER().getText())
@@ -57,8 +57,8 @@ class RPGInterpreter(RPG_GamesVisitor):
 
     def visitStatsUpdate(self, ctx: RPG_GamesParser.StatsUpdateContext):
         name = ctx.NAME().getText()
-        if name not in self.player:
-            raise NameError(f"{name} is not a listed player")
+        # if name not in self.player.keys():
+        #     raise NameError(f"{name} is not a listed player")
         stat = ctx.stat().getText()
         value = int(ctx.NUMBER().getText())
         self.player[name][stat] = value
@@ -66,7 +66,7 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitAddInventory(self, ctx: RPG_GamesParser.AddInventoryContext):
         name = ctx.NAME().getText()
-        if name not in self.player:
+        if name not in self.player.keys():
             raise ValueError(f"{name} is not a listed player")
         item = ctx.ITEM().getText()
         if item in self.player[name]['inventory']:
@@ -76,7 +76,7 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitRemoveInventory(self, ctx: RPG_GamesParser.RemoveInventoryContext):
         name = ctx.NAME().getText()
-        if name not in self.player:
+        if name not in self.player.keys():
             raise ValueError(f"{name} is not a listed player")
         item = ctx.ITEM().getText()
         if item not in self.player[name]['inventory']:
@@ -88,7 +88,7 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitInInventory(self, ctx: RPG_GamesParser.InInventoryContext):
         name = ctx.NAME().getText()
-        if name not in self.player:
+        if name not in self.player.keys():
             raise ValueError(f"{name} is not a listed player")
         inv = ""
         for key, val in self.player[name]['inventory'].items():
@@ -99,8 +99,10 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitSummary(self, ctx: RPG_GamesParser.SummaryContext):
         name = ctx.NAME().getText()
-        if name not in self.player:
-            raise ValueError(f"{name} is not a listed player")
+        for keys, val in self.player.items():
+            print(keys, val)
+        # if name not in self.player.keys():
+        #     raise ValueError(f"{name} is not a listed player")
         inv = ""
         for key, val in self.player[name].items():
             if key == 'inventory':
@@ -112,7 +114,7 @@ class RPGInterpreter(RPG_GamesVisitor):
 
     def visitPoof(self, ctx: RPG_GamesParser.PoofContext):
         name = ctx.NAME().getText()
-        if name not in self.player:
+        if name not in self.player.keys():
             raise ValueError(f"{name} is not poofable")
         self.player.pop(name)
         return self.player
@@ -120,6 +122,7 @@ class RPGInterpreter(RPG_GamesVisitor):
 # Main entry point of the program
 if __name__ == "__main__":
     # Infinite loop to continuously accept user input
+    calc = RPGInterpreter()
     while True:
         try:
             # Prompt the user for input
@@ -132,8 +135,6 @@ if __name__ == "__main__":
             parser = RPG_GamesParser(stream)
             # Parse the expression to generate the parse tree
             tree = parser.statement()
-            # Create an instance of the Basic visitor
-            calc = RPGInterpreter()
             # Visit the parse tree and print the evaluation result
             print(calc.visit(tree))
         # Handle end of file (EOF) or keyboard interrupt (Ctrl + C) to exit the loop
