@@ -1,5 +1,6 @@
 import sys
 import os
+import random
 from antlr4 import *
 from g4.RPG_GamesLexer import RPG_GamesLexer
 from g4.RPG_GamesParser import RPG_GamesParser
@@ -39,18 +40,6 @@ class RPGInterpreter(RPG_GamesVisitor):
                              }
         
         return self.player
-    
-    def visitHp(self, ctx: RPG_GamesParser.HpContext):
-        return int(ctx.NUMBER().getText())
-    
-    def visitStrength(self, ctx: RPG_GamesParser.StrengthContext):
-        return int(ctx.NUMBER().getText())
-    
-    def visitIntelligence(self, ctx: RPG_GamesParser.IntelligenceContext):
-        return int(ctx.NUMBER().getText())
-
-    def visitAgility(self, ctx: RPG_GamesParser.AgilityContext):
-        return int(ctx.NUMBER().getText())
     
     def visitWeapon(self, ctx: RPG_GamesParser.WeaponContext):
         return ctx.getChild(0).getText()
@@ -118,6 +107,41 @@ class RPGInterpreter(RPG_GamesVisitor):
             raise ValueError(f"{name} is not poofable")
         self.player.pop(name)
         return self.player
+    
+    
+    def visitDiceRoll(self, ctx: RPG_GamesParser.DiceRollContext):
+        # Si deux enfants -> NAME, NUMBER
+        if ctx.NAME():
+            name = ctx.NAME().getText()
+            if name not in self.player:
+                raise ValueError(f"{name} is not a listed player")
+        else:
+            name = None  # Pas de joueur spécifié
+
+        dice_sides = int(ctx.NUMBER().getText())
+        if dice_sides <= 0:
+            raise ValueError("Number of sides must be a positive integer.")
+
+        roll = random.randint(1, dice_sides)
+
+        if name:
+            # Avec joueur
+            if roll == 1:
+                return f"{name} rolled a {roll} and got a critical fail!"
+            elif roll == dice_sides:
+                return f"{name} rolled a {roll} and got a critical success!"
+            else:
+                return f"{name} rolled a {roll}"
+        else:
+            # Sans joueur
+            return f"You rolled a d{dice_sides} and got {roll}"
+
+
+        
+    # def rollDice(self, dice:int):
+    #     if dice <= 0:
+    #         raise ValueError(f"Cannot roll {dice} dice")
+    #     return random.randint(1, int(dice))
 
 # Main entry point of the program
 if __name__ == "__main__":

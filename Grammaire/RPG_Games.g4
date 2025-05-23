@@ -41,7 +41,7 @@ summary: PRINTCAR '(' NAME ')';
 
 poof: DEL '(' NAME ')';
 
-diceRoll: DICEROLL '(' NUMBER ')';
+diceRoll: DICEROLL '(' (NAME ',')? NUMBER ')';
 
 weapon: SWORD | BOW | STAFF;
 
