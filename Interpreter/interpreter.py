@@ -38,7 +38,7 @@ class RPGInterpreter(RPG_GamesVisitor):
                              'inventory': {}
                              }
         
-        return self.player
+        return self.player[name]
     
     def visitHp(self, ctx: RPG_GamesParser.HpContext):
         return int(ctx.NUMBER().getText())
@@ -67,7 +67,7 @@ class RPGInterpreter(RPG_GamesVisitor):
     def visitAddInventory(self, ctx: RPG_GamesParser.AddInventoryContext):
         name = ctx.NAME().getText()
         if name not in self.player:
-            raise NameError(f"{name} is not a listed player")
+            raise ValueError(f"{name} is not a listed player")
         item = ctx.ITEM().getText()
         if item in self.player[name]['inventory']:
             self.player[name]['inventory'][item]+= 1
