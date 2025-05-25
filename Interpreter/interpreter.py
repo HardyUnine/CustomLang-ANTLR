@@ -109,39 +109,25 @@ class RPGInterpreter(RPG_GamesVisitor):
         return self.player
     
     
-    def visitDiceRoll(self, ctx: RPG_GamesParser.DiceRollContext):
-        # Si deux enfants -> NAME, NUMBER
-        if ctx.NAME():
-            name = ctx.NAME().getText()
-            if name not in self.player:
-                raise ValueError(f"{name} is not a listed player")
-        else:
-            name = None  # Pas de joueur spécifié
-
+    def visitRollWithName(self, ctx: RPG_GamesParser.RollWithNameContext):
+        name = ctx.NAME().getText()
+        if name not in self.player:
+            raise ValueError(f"{name} is not a listed player")
         dice_sides = int(ctx.NUMBER().getText())
-        if dice_sides <= 0:
-            raise ValueError("Number of sides must be a positive integer.")
-
         roll = random.randint(1, dice_sides)
-
-        if name:
-            # Avec joueur
-            if roll == 1:
-                return f"{name} rolled a {roll} and got a critical fail!"
-            elif roll == dice_sides:
-                return f"{name} rolled a {roll} and got a critical success!"
-            else:
-                return f"{name} rolled a {roll}"
+        if roll == 1:
+            return f"{name} rolled a {roll} and got a critical fail!"
+        elif roll == dice_sides:
+            return f"{name} rolled a {roll} and got a critical success!"
         else:
-            # Sans joueur
-            return f"You rolled a d{dice_sides} and got {roll}"
+            return f"{name} rolled a {roll}"
+    
 
+    def visitRollWithoutName(self, ctx: RPG_GamesParser.RollWithoutNameContext):
+        dice_sides = int(ctx.NUMBER().getText())
+        roll = random.randint(1, dice_sides)
+        return f"You rolled a d{dice_sides} and got {roll}"
 
-        
-    # def rollDice(self, dice:int):
-    #     if dice <= 0:
-    #         raise ValueError(f"Cannot roll {dice} dice")
-    #     return random.randint(1, int(dice))
 
 # Main entry point of the program
 if __name__ == "__main__":

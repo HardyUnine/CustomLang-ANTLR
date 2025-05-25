@@ -89,12 +89,21 @@ class RPG_GamesListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by RPG_GamesParser#diceRoll.
-    def enterDiceRoll(self, ctx:RPG_GamesParser.DiceRollContext):
+    # Enter a parse tree produced by RPG_GamesParser#RollWithName.
+    def enterRollWithName(self, ctx:RPG_GamesParser.RollWithNameContext):
         pass
 
-    # Exit a parse tree produced by RPG_GamesParser#diceRoll.
-    def exitDiceRoll(self, ctx:RPG_GamesParser.DiceRollContext):
+    # Exit a parse tree produced by RPG_GamesParser#RollWithName.
+    def exitRollWithName(self, ctx:RPG_GamesParser.RollWithNameContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#RollWithoutName.
+    def enterRollWithoutName(self, ctx:RPG_GamesParser.RollWithoutNameContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#RollWithoutName.
+    def exitRollWithoutName(self, ctx:RPG_GamesParser.RollWithoutNameContext):
         pass
 
 

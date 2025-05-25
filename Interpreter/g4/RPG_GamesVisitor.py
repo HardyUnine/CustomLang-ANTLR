@@ -54,8 +54,13 @@ class RPG_GamesVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
-    # Visit a parse tree produced by RPG_GamesParser#diceRoll.
-    def visitDiceRoll(self, ctx:RPG_GamesParser.DiceRollContext):
+    # Visit a parse tree produced by RPG_GamesParser#RollWithName.
+    def visitRollWithName(self, ctx:RPG_GamesParser.RollWithNameContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#RollWithoutName.
+    def visitRollWithoutName(self, ctx:RPG_GamesParser.RollWithoutNameContext):
         return self.visitChildren(ctx)
 
 

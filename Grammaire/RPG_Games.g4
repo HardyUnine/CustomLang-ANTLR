@@ -3,6 +3,8 @@ grammar RPG_Games; // Définit nom de la grammaire
 // TO UPDATE INTERPRETER 
 // (Assuming your are pointing to Grammaire):
 // antlr4 -Dlanguage=Python3 -visitor -o ..\Interpreter\g4 RPG_Games.g4 
+// to run on linux:
+// /var/data/python/bin/antlr4 -Dlanguage=Python3 -visitor -o ../Interpreter/g4 RPG_Games.g4
 
 
 //---------------------------------------------------------------------------------------
@@ -41,7 +43,10 @@ summary: PRINTCAR '(' NAME ')';
 
 poof: DEL '(' NAME ')';
 
-diceRoll: DICEROLL '(' (NAME ',')? NUMBER ')';
+diceRoll
+    : 'ROLL' '(' NAME ',' NUMBER ')'     # RollWithName
+    | 'ROLL' '(' NUMBER ')'              # RollWithoutName
+    ;
 
 weapon: SWORD | BOW | STAFF;
 
@@ -85,12 +90,13 @@ PALADIN: 'Paladin';
 WIZARD: 'Wizard';
 RANGER: 'Ranger';
 
+NAME: [a-zA-Z_]+;
 
 ITEM: [a-zA-Z_][a-zA-Z_0-9]*;
 
 NUMBER : [0-9]+;
 
-NAME: [a-zA-Z_]+;
+
 
 // Whitespace
 WS: [ \t\r\n]+ -> skip;
