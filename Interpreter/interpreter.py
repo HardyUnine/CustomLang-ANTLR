@@ -25,21 +25,52 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitPlayerDecl(self, ctx: RPG_GamesParser.PlayerDeclContext):
         name = ctx.NAME().getText()
-        hp = self.visit(ctx.hp())
-        strength = self.visit(ctx.strength())
-        intel = self.visit(ctx.intelligence())
-        agi = self.visit(ctx.agility())
-        weapon = ctx.weapon().getText()
+        race = ctx.race().getText()
+        classe = ctx.classes().getText()
 
-        self.player[name] = {'hp': hp,
-                             'strength': strength,
-                             'intelligence': intel,
-                             'agility': agi,
-                             'weapon': weapon,
-                             'inventory': {}
-                             }
-        
+        stats = self.calculateStatsFromRaceAndClass(race, classe)
+
+        self.player[name] = {
+            'hp': stats['hp'],
+            'strength': stats['strength'],
+            'intelligence': stats['intelligence'],
+            'agility': stats['agility'],
+            'weapon': stats['weapon'],
+            'inventory': {}
+        }
+
         return self.player
+
+    
+    def calculateStatsFromRaceAndClass(self, race, classe):
+    # Base stats by race
+        race_stats = {
+            'Dwarf': {'hp': 10, 'strength': 4, 'intelligence': 2, 'agility': 2},
+            'Human': {'hp': 8,  'strength': 3, 'intelligence': 3, 'agility': 3},
+            'Elf':   {'hp': 6,  'strength': 2, 'intelligence': 4, 'agility': 4},
+        }
+
+        # Class bonuses and default weapons
+        class_bonus = {
+            'Paladin': {'hp': 4, 'strength': 2, 'intelligence': 0, 'agility': 0, 'weapon': 'sword'},
+            'Wizard':  {'hp': 2, 'strength': 0, 'intelligence': 3, 'agility': 0, 'weapon': 'staff'},
+            'Ranger':  {'hp': 1, 'strength': 0, 'intelligence': 0, 'agility': 3, 'weapon': 'bow'},
+        }
+
+        if race not in race_stats or classe not in class_bonus:
+            raise ValueError(f"Invalid race or class: {race}, {classe}")
+
+        base = race_stats[race]
+        bonus = class_bonus[classe]
+
+        return {
+            'hp': base['hp'] + bonus['hp'],
+            'strength': base['strength'] + bonus['strength'],
+            'intelligence': base['intelligence'] + bonus['intelligence'],
+            'agility': base['agility'] + bonus['agility'],
+            'weapon': bonus['weapon']
+        }
+
     
     def visitWeapon(self, ctx: RPG_GamesParser.WeaponContext):
         return ctx.getChild(0).getText()
