@@ -21,7 +21,9 @@ statement: playerDecl
 | inInventory
 | summary
 | poof
-| diceRoll; //assignement
+| diceRoll 
+| save
+| load; //assignement
 
 // un id(nom de variable) = une valeur entière
 // assignement: ID EQ NUMBER;
@@ -55,6 +57,11 @@ stat: STRENGTH | INTELLIGENCE | AGILITY | HP;
 race: DWARF | HUMAN | ELF;
 
 classes: PALADIN | WIZARD | RANGER;
+
+save: 'SAVE' '(' STRING ')';
+
+load: 'LOAD' '(' STRING ')';
+
 
 // strength: NUMBER;
 // agility : NUMBER;
@@ -96,7 +103,7 @@ ITEM: [a-zA-Z_][a-zA-Z_0-9]*;
 
 NUMBER : [0-9]+;
 
-
+STRING: '"' (~["\r\n])* '"';
 
 // Whitespace
 WS: [ \t\r\n]+ -> skip;

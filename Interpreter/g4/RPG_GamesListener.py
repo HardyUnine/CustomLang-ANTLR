@@ -143,5 +143,23 @@ class RPG_GamesListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by RPG_GamesParser#save.
+    def enterSave(self, ctx:RPG_GamesParser.SaveContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#save.
+    def exitSave(self, ctx:RPG_GamesParser.SaveContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#load.
+    def enterLoad(self, ctx:RPG_GamesParser.LoadContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#load.
+    def exitLoad(self, ctx:RPG_GamesParser.LoadContext):
+        pass
+
+
 
 del RPG_GamesParser

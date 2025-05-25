@@ -84,5 +84,15 @@ class RPG_GamesVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by RPG_GamesParser#save.
+    def visitSave(self, ctx:RPG_GamesParser.SaveContext):
+        return self.visitChildren(ctx)
+
+
+    # Visit a parse tree produced by RPG_GamesParser#load.
+    def visitLoad(self, ctx:RPG_GamesParser.LoadContext):
+        return self.visitChildren(ctx)
+
+
 
 del RPG_GamesParser

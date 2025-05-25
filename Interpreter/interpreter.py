@@ -158,6 +158,46 @@ class RPGInterpreter(RPG_GamesVisitor):
         dice_sides = int(ctx.NUMBER().getText())
         roll = random.randint(1, dice_sides)
         return f"You rolled a d{dice_sides} and got {roll}"
+    
+    def visitSave(self, ctx: RPG_GamesParser.SaveContext):
+        filename = ctx.STRING().getText().strip('"')
+        with open(filename, 'w') as f:
+            for name, info in self.player.items():
+                f.write(f"PLAYER:{name}\n")
+                for key, val in info.items():
+                    if key == 'inventory':
+                        f.write("INVENTORY:\n")
+                        for item, qty in val.items():
+                            f.write(f"- {item}:{qty}\n")
+                    else:
+                        f.write(f"{key.upper()}:{val}\n")
+                f.write("END\n")
+        return f"Game saved to {filename}"
+
+    def visitLoad(self, ctx: RPG_GamesParser.LoadContext):
+        filename = ctx.STRING().getText().strip('"')
+        try:
+            with open(filename, 'r') as f:
+                lines = f.readlines()
+            self.player = {}
+            current_player = None
+            for line in lines:
+                line = line.strip()
+                if line.startswith("PLAYER:"):
+                    current_player = line.split(":", 1)[1]
+                    self.player[current_player] = {'inventory': {}}
+                elif line.startswith("INVENTORY:"):
+                    continue
+                elif line.startswith("-"):
+                    item, qty = line[1:].split(":")
+                    self.player[current_player]['inventory'][item] = int(qty)
+                elif ":" in line:
+                    key, val = line.split(":", 1)
+                    self.player[current_player][key.lower()] = int(val) if val.isdigit() else val
+        except FileNotFoundError:
+            return f"File '{filename}' not found."
+        return f"Game loaded from {filename}"
+
 
 
 # Main entry point of the program
