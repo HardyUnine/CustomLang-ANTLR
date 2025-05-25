@@ -34,6 +34,11 @@ class RPG_GamesVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by RPG_GamesParser#item.
+    def visitItem(self, ctx:RPG_GamesParser.ItemContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by RPG_GamesParser#removeInventory.
     def visitRemoveInventory(self, ctx:RPG_GamesParser.RemoveInventoryContext):
         return self.visitChildren(ctx)

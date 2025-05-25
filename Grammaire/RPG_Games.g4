@@ -35,7 +35,9 @@ playerDecl:  CREATE '(' NAME ',' race ',' classes ')';
 
 statsUpdate: UPDATE '(' NAME ',' stat ',' NUMBER ')';
 
-addInventory : GET '(' NAME ',' ITEM ')';
+addInventory : GET '(' NAME ',' item ')';
+
+item: NAME | ITEM;
 
 removeInventory : DEL '(' NAME ',' ITEM ')';
 
