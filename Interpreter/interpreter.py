@@ -88,7 +88,7 @@ class RPGInterpreter(RPG_GamesVisitor):
         name = ctx.NAME().getText()
         if name not in self.player.keys():
             raise ValueError(f"{name} is not a listed player")
-        item_token = ctx.ITEM()
+        item_token = ctx.item()
         if not item_token:
             raise ValueError("Invalid item name")
         item = item_token.getText()
@@ -102,7 +102,7 @@ class RPGInterpreter(RPG_GamesVisitor):
         name = ctx.NAME().getText()
         if name not in self.player.keys():
             raise ValueError(f"{name} is not a listed player")
-        item = ctx.ITEM().getText()
+        item = ctx.item().getText()
         if item not in self.player[name]['inventory']:
             raise ValueError(f"{name} never had {item}")
         self.player[name]['inventory'][item]-= 1

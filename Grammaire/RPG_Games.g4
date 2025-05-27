@@ -37,9 +37,9 @@ statsUpdate: UPDATE '(' NAME ',' stat ',' NUMBER ')';
 
 addInventory : GET '(' NAME ',' item ')';
 
-item: NAME | ITEM;
+removeInventory : DEL '(' NAME ',' item ')';
 
-removeInventory : DEL '(' NAME ',' ITEM ')';
+item: NAME | ITEM;
 
 inInventory: PRINTINV '(' NAME ')';
 
