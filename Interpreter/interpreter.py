@@ -74,15 +74,20 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitWeapon(self, ctx: RPG_GamesParser.WeaponContext):
         return ctx.getChild(0).getText()
-
+    
     def visitStatsUpdate(self, ctx: RPG_GamesParser.StatsUpdateContext):
         name = ctx.NAME().getText()
-        # if name not in self.player:
-        #     raise NameError(f"{name} is not a listed player")
         stat = ctx.stat().getText()
         value = int(ctx.NUMBER().getText())
-        self.player[name][stat] = value
-        return self.player
+
+        if name not in self.player:
+            raise ValueError(f"{name} does not exist")
+
+        allowed_stats = ['hp', 'strength', 'intelligence', 'agility']
+        if stat in allowed_stats:
+            self.player[name][stat] = value
+            return f"{name}'s {stat} updated to {value}"
+        # raise ValueError(f"Stat '{stat}' cannot be modified")
     
     def visitAddInventory(self, ctx: RPG_GamesParser.AddInventoryContext):
         name = ctx.NAME().getText()
@@ -123,16 +128,11 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitSummary(self, ctx: RPG_GamesParser.SummaryContext):
         name = ctx.NAME().getText()
-        for keys, val in self.player.items():
-            print(keys, val)
-        # if name not in self.player:
-        #     raise ValueError(f"{name} is not a listed player")
+        if name not in self.player:
+            raise ValueError(f"{name} is not a listed player")
         inv = ""
         for key, val in self.player[name].items():
-            if key == 'inventory':
-                continue
             inv+= f'{key}: {val}\n'
-        # print(f"{name} stats:\n{inv}")
         return f"{name} stats:\n{inv}"
         
 
@@ -202,26 +202,65 @@ class RPGInterpreter(RPG_GamesVisitor):
             return f"File '{filename}' not found."
         return f"Game loaded from {filename}"
 
+def run_file(filename, interpreter):
+    if not filename.endswith(".rpgg"):
+        print(f"Error: '{filename}' is not a .rpgg file")
+        sys.exit(1)
+    if not os.path.exists(filename):
+        print(f"Error: File '{filename}' not found")
+        sys.exit(1)
+
+    with open(filename, "r", encoding="utf-8") as f:
+        text = f.read()
+
+    lexer = RPG_GamesLexer(InputStream(text))
+    tokens = CommonTokenStream(lexer)
+    parser = RPG_GamesParser(tokens)
+    tree = parser.program()
+    interpreter.visit(tree)
 
 
-# Main entry point of the program
-if __name__ == "__main__":
-    # Infinite loop to continuously accept user input
-    calc = RPGInterpreter()
+def repl(interpreter):
     while True:
         try:
-            # Prompt the user for input
-            text = input("> ")
-            # Initialize the lexer with the input text
-            lexer = RPG_GamesLexer(InputStream(text))
-            # Create a token stream from the lexer
-            stream = CommonTokenStream(lexer)
-            # Initialize the parser with the token stream
-            parser = RPG_GamesParser(stream)
-            # Parse the expression to generate the parse tree
-            tree = parser.statement()
-            # Visit the parse tree and print the evaluation result
-            print(calc.visit(tree))
-        # Handle end of file (EOF) or keyboard interrupt (Ctrl + C) to exit the loop
+            line = input("> ")
         except (EOFError, KeyboardInterrupt):
             break
+        if not line.strip():
+            continue
+        lexer = RPG_GamesLexer(InputStream(line + "\n"))
+        tokens = CommonTokenStream(lexer)
+        parser = RPG_GamesParser(tokens)
+        tree = parser.statement()
+        print(interpreter.visit(tree))
+
+if __name__ == "__main__":
+    interp = RPGInterpreter()
+    if len(sys.argv) > 1:
+        run_file(sys.argv[1], interp)
+        repl(interp)
+    else:
+        repl(interp)
+
+
+# # Main entry point of the program
+# if __name__ == "__main__":
+#     # Infinite loop to continuously accept user input
+#     calc = RPGInterpreter()
+#     while True:
+#         try:
+#             # Prompt the user for input
+#             text = input("> ")
+#             # Initialize the lexer with the input text
+#             lexer = RPG_GamesLexer(InputStream(text))
+#             # Create a token stream from the lexer
+#             stream = CommonTokenStream(lexer)
+#             # Initialize the parser with the token stream
+#             parser = RPG_GamesParser(stream)
+#             # Parse the expression to generate the parse tree
+#             tree = parser.statement()
+#             # Visit the parse tree and print the evaluation result
+#             print(calc.visit(tree))
+#         # Handle end of file (EOF) or keyboard interrupt (Ctrl + C) to exit the loop
+#         except (EOFError, KeyboardInterrupt):
+#             break
