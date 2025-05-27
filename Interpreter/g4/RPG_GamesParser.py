@@ -15,19 +15,19 @@ def serializedATN():
         2,14,7,14,2,15,7,15,2,16,7,16,1,0,5,0,36,8,0,10,0,12,0,39,9,0,1,
         0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,53,8,1,1,2,1,2,
         1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
-        1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,6,1,6,1,6,1,6,1,6,1,6,1,6,
+        1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,
         1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,10,
         1,10,1,10,1,10,1,10,1,10,1,10,1,10,1,10,1,10,3,10,114,8,10,1,11,
         1,11,1,12,1,12,1,13,1,13,1,14,1,14,1,15,1,15,1,15,1,15,1,15,1,16,
         1,16,1,16,1,16,1,16,1,16,0,0,17,0,2,4,6,8,10,12,14,16,18,20,22,24,
         26,28,30,32,0,5,1,0,26,27,1,0,13,15,1,0,16,19,1,0,20,22,1,0,23,25,
         127,0,37,1,0,0,0,2,52,1,0,0,0,4,54,1,0,0,0,6,63,1,0,0,0,8,72,1,0,
-        0,0,10,79,1,0,0,0,12,81,1,0,0,0,14,88,1,0,0,0,16,93,1,0,0,0,18,98,
+        0,0,10,79,1,0,0,0,12,86,1,0,0,0,14,88,1,0,0,0,16,93,1,0,0,0,18,98,
         1,0,0,0,20,113,1,0,0,0,22,115,1,0,0,0,24,117,1,0,0,0,26,119,1,0,
         0,0,28,121,1,0,0,0,30,123,1,0,0,0,32,128,1,0,0,0,34,36,3,2,1,0,35,
         34,1,0,0,0,36,39,1,0,0,0,37,35,1,0,0,0,37,38,1,0,0,0,38,40,1,0,0,
         0,39,37,1,0,0,0,40,41,5,0,0,1,41,1,1,0,0,0,42,53,3,4,2,0,43,53,3,
-        6,3,0,44,53,3,8,4,0,45,53,3,12,6,0,46,53,3,14,7,0,47,53,3,16,8,0,
+        6,3,0,44,53,3,8,4,0,45,53,3,10,5,0,46,53,3,14,7,0,47,53,3,16,8,0,
         48,53,3,18,9,0,49,53,3,20,10,0,50,53,3,30,15,0,51,53,3,32,16,0,52,
         42,1,0,0,0,52,43,1,0,0,0,52,44,1,0,0,0,52,45,1,0,0,0,52,46,1,0,0,
         0,52,47,1,0,0,0,52,48,1,0,0,0,52,49,1,0,0,0,52,50,1,0,0,0,52,51,
@@ -36,21 +36,21 @@ def serializedATN():
         5,3,0,0,62,5,1,0,0,0,63,64,5,9,0,0,64,65,5,1,0,0,65,66,5,26,0,0,
         66,67,5,2,0,0,67,68,3,24,12,0,68,69,5,2,0,0,69,70,5,28,0,0,70,71,
         5,3,0,0,71,7,1,0,0,0,72,73,5,8,0,0,73,74,5,1,0,0,74,75,5,26,0,0,
-        75,76,5,2,0,0,76,77,3,10,5,0,77,78,5,3,0,0,78,9,1,0,0,0,79,80,7,
-        0,0,0,80,11,1,0,0,0,81,82,5,7,0,0,82,83,5,1,0,0,83,84,5,26,0,0,84,
-        85,5,2,0,0,85,86,5,27,0,0,86,87,5,3,0,0,87,13,1,0,0,0,88,89,5,10,
-        0,0,89,90,5,1,0,0,90,91,5,26,0,0,91,92,5,3,0,0,92,15,1,0,0,0,93,
-        94,5,11,0,0,94,95,5,1,0,0,95,96,5,26,0,0,96,97,5,3,0,0,97,17,1,0,
-        0,0,98,99,5,7,0,0,99,100,5,1,0,0,100,101,5,26,0,0,101,102,5,3,0,
-        0,102,19,1,0,0,0,103,104,5,12,0,0,104,105,5,1,0,0,105,106,5,26,0,
-        0,106,107,5,2,0,0,107,108,5,28,0,0,108,114,5,3,0,0,109,110,5,12,
-        0,0,110,111,5,1,0,0,111,112,5,28,0,0,112,114,5,3,0,0,113,103,1,0,
-        0,0,113,109,1,0,0,0,114,21,1,0,0,0,115,116,7,1,0,0,116,23,1,0,0,
-        0,117,118,7,2,0,0,118,25,1,0,0,0,119,120,7,3,0,0,120,27,1,0,0,0,
-        121,122,7,4,0,0,122,29,1,0,0,0,123,124,5,4,0,0,124,125,5,1,0,0,125,
-        126,5,29,0,0,126,127,5,3,0,0,127,31,1,0,0,0,128,129,5,5,0,0,129,
-        130,5,1,0,0,130,131,5,29,0,0,131,132,5,3,0,0,132,33,1,0,0,0,3,37,
-        52,113
+        75,76,5,2,0,0,76,77,3,12,6,0,77,78,5,3,0,0,78,9,1,0,0,0,79,80,5,
+        7,0,0,80,81,5,1,0,0,81,82,5,26,0,0,82,83,5,2,0,0,83,84,3,12,6,0,
+        84,85,5,3,0,0,85,11,1,0,0,0,86,87,7,0,0,0,87,13,1,0,0,0,88,89,5,
+        10,0,0,89,90,5,1,0,0,90,91,5,26,0,0,91,92,5,3,0,0,92,15,1,0,0,0,
+        93,94,5,11,0,0,94,95,5,1,0,0,95,96,5,26,0,0,96,97,5,3,0,0,97,17,
+        1,0,0,0,98,99,5,7,0,0,99,100,5,1,0,0,100,101,5,26,0,0,101,102,5,
+        3,0,0,102,19,1,0,0,0,103,104,5,12,0,0,104,105,5,1,0,0,105,106,5,
+        26,0,0,106,107,5,2,0,0,107,108,5,28,0,0,108,114,5,3,0,0,109,110,
+        5,12,0,0,110,111,5,1,0,0,111,112,5,28,0,0,112,114,5,3,0,0,113,103,
+        1,0,0,0,113,109,1,0,0,0,114,21,1,0,0,0,115,116,7,1,0,0,116,23,1,
+        0,0,0,117,118,7,2,0,0,118,25,1,0,0,0,119,120,7,3,0,0,120,27,1,0,
+        0,0,121,122,7,4,0,0,122,29,1,0,0,0,123,124,5,4,0,0,124,125,5,1,0,
+        0,125,126,5,29,0,0,126,127,5,3,0,0,127,31,1,0,0,0,128,129,5,5,0,
+        0,129,130,5,1,0,0,130,131,5,29,0,0,131,132,5,3,0,0,132,33,1,0,0,
+        0,3,37,52,113
     ]
 
 class RPG_GamesParser ( Parser ):
@@ -82,8 +82,8 @@ class RPG_GamesParser ( Parser ):
     RULE_playerDecl = 2
     RULE_statsUpdate = 3
     RULE_addInventory = 4
-    RULE_item = 5
-    RULE_removeInventory = 6
+    RULE_removeInventory = 5
+    RULE_item = 6
     RULE_inInventory = 7
     RULE_summary = 8
     RULE_poof = 9
@@ -96,7 +96,7 @@ class RPG_GamesParser ( Parser ):
     RULE_load = 16
 
     ruleNames =  [ "program", "statement", "playerDecl", "statsUpdate", 
-                   "addInventory", "item", "removeInventory", "inInventory", 
+                   "addInventory", "removeInventory", "item", "inInventory", 
                    "summary", "poof", "diceRoll", "weapon", "stat", "race", 
                    "classes", "save", "load" ]
 
@@ -558,6 +558,70 @@ class RPG_GamesParser ( Parser ):
         return localctx
 
 
+    class RemoveInventoryContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def DEL(self):
+            return self.getToken(RPG_GamesParser.DEL, 0)
+
+        def NAME(self):
+            return self.getToken(RPG_GamesParser.NAME, 0)
+
+        def item(self):
+            return self.getTypedRuleContext(RPG_GamesParser.ItemContext,0)
+
+
+        def getRuleIndex(self):
+            return RPG_GamesParser.RULE_removeInventory
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterRemoveInventory" ):
+                listener.enterRemoveInventory(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitRemoveInventory" ):
+                listener.exitRemoveInventory(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitRemoveInventory" ):
+                return visitor.visitRemoveInventory(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def removeInventory(self):
+
+        localctx = RPG_GamesParser.RemoveInventoryContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 10, self.RULE_removeInventory)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 79
+            self.match(RPG_GamesParser.DEL)
+            self.state = 80
+            self.match(RPG_GamesParser.T__0)
+            self.state = 81
+            self.match(RPG_GamesParser.NAME)
+            self.state = 82
+            self.match(RPG_GamesParser.T__1)
+            self.state = 83
+            self.item()
+            self.state = 84
+            self.match(RPG_GamesParser.T__2)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
     class ItemContext(ParserRuleContext):
         __slots__ = 'parser'
 
@@ -594,80 +658,17 @@ class RPG_GamesParser ( Parser ):
     def item(self):
 
         localctx = RPG_GamesParser.ItemContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 10, self.RULE_item)
+        self.enterRule(localctx, 12, self.RULE_item)
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 79
+            self.state = 86
             _la = self._input.LA(1)
             if not(_la==26 or _la==27):
                 self._errHandler.recoverInline(self)
             else:
                 self._errHandler.reportMatch(self)
                 self.consume()
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class RemoveInventoryContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def DEL(self):
-            return self.getToken(RPG_GamesParser.DEL, 0)
-
-        def NAME(self):
-            return self.getToken(RPG_GamesParser.NAME, 0)
-
-        def ITEM(self):
-            return self.getToken(RPG_GamesParser.ITEM, 0)
-
-        def getRuleIndex(self):
-            return RPG_GamesParser.RULE_removeInventory
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterRemoveInventory" ):
-                listener.enterRemoveInventory(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitRemoveInventory" ):
-                listener.exitRemoveInventory(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitRemoveInventory" ):
-                return visitor.visitRemoveInventory(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def removeInventory(self):
-
-        localctx = RPG_GamesParser.RemoveInventoryContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 12, self.RULE_removeInventory)
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 81
-            self.match(RPG_GamesParser.DEL)
-            self.state = 82
-            self.match(RPG_GamesParser.T__0)
-            self.state = 83
-            self.match(RPG_GamesParser.NAME)
-            self.state = 84
-            self.match(RPG_GamesParser.T__1)
-            self.state = 85
-            self.match(RPG_GamesParser.ITEM)
-            self.state = 86
-            self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)

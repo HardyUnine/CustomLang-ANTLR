@@ -53,21 +53,21 @@ class RPG_GamesListener(ParseTreeListener):
         pass
 
 
-    # Enter a parse tree produced by RPG_GamesParser#item.
-    def enterItem(self, ctx:RPG_GamesParser.ItemContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#item.
-    def exitItem(self, ctx:RPG_GamesParser.ItemContext):
-        pass
-
-
     # Enter a parse tree produced by RPG_GamesParser#removeInventory.
     def enterRemoveInventory(self, ctx:RPG_GamesParser.RemoveInventoryContext):
         pass
 
     # Exit a parse tree produced by RPG_GamesParser#removeInventory.
     def exitRemoveInventory(self, ctx:RPG_GamesParser.RemoveInventoryContext):
+        pass
+
+
+    # Enter a parse tree produced by RPG_GamesParser#item.
+    def enterItem(self, ctx:RPG_GamesParser.ItemContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#item.
+    def exitItem(self, ctx:RPG_GamesParser.ItemContext):
         pass
 
 
