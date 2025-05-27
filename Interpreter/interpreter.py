@@ -100,7 +100,7 @@ class RPGInterpreter(RPG_GamesVisitor):
     
     def visitRemoveInventory(self, ctx: RPG_GamesParser.RemoveInventoryContext):
         name = ctx.NAME().getText()
-        if name not in self.player.keys():
+        if name not in self.player:
             raise ValueError(f"{name} is not a listed player")
         item = ctx.item().getText()
         if item not in self.player[name]['inventory']:
