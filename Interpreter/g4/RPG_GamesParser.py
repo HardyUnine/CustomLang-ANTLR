@@ -10,47 +10,47 @@ else:
 
 def serializedATN():
     return [
-        4,1,30,134,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
+        4,1,30,135,2,0,7,0,2,1,7,1,2,2,7,2,2,3,7,3,2,4,7,4,2,5,7,5,2,6,7,
         6,2,7,7,7,2,8,7,8,2,9,7,9,2,10,7,10,2,11,7,11,2,12,7,12,2,13,7,13,
         2,14,7,14,2,15,7,15,2,16,7,16,1,0,5,0,36,8,0,10,0,12,0,39,9,0,1,
-        0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,53,8,1,1,2,1,2,
-        1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
-        1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,6,1,6,
-        1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,8,1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,10,
-        1,10,1,10,1,10,1,10,1,10,1,10,1,10,1,10,1,10,3,10,114,8,10,1,11,
-        1,11,1,12,1,12,1,13,1,13,1,14,1,14,1,15,1,15,1,15,1,15,1,15,1,16,
-        1,16,1,16,1,16,1,16,1,16,0,0,17,0,2,4,6,8,10,12,14,16,18,20,22,24,
-        26,28,30,32,0,5,1,0,26,27,1,0,13,15,1,0,16,19,1,0,20,22,1,0,23,25,
-        127,0,37,1,0,0,0,2,52,1,0,0,0,4,54,1,0,0,0,6,63,1,0,0,0,8,72,1,0,
-        0,0,10,79,1,0,0,0,12,86,1,0,0,0,14,88,1,0,0,0,16,93,1,0,0,0,18,98,
-        1,0,0,0,20,113,1,0,0,0,22,115,1,0,0,0,24,117,1,0,0,0,26,119,1,0,
-        0,0,28,121,1,0,0,0,30,123,1,0,0,0,32,128,1,0,0,0,34,36,3,2,1,0,35,
+        0,1,0,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,3,1,54,8,1,1,2,
+        1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,2,1,3,1,3,1,3,1,3,1,3,1,3,1,3,1,3,
+        1,3,1,4,1,4,1,4,1,4,1,4,1,4,1,4,1,5,1,5,1,5,1,5,1,5,1,5,1,5,1,6,
+        1,6,1,7,1,7,1,7,1,7,1,7,1,8,1,8,1,9,1,9,1,9,1,9,1,9,1,10,1,10,1,
+        10,1,10,1,10,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,1,11,3,
+        11,117,8,11,1,12,1,12,1,13,1,13,1,14,1,14,1,15,1,15,1,15,1,15,1,
+        15,1,16,1,16,1,16,1,16,1,16,1,16,0,0,17,0,2,4,6,8,10,12,14,16,18,
+        20,22,24,26,28,30,32,0,4,1,0,26,27,1,0,16,19,1,0,20,22,1,0,23,25,
+        129,0,37,1,0,0,0,2,53,1,0,0,0,4,55,1,0,0,0,6,64,1,0,0,0,8,73,1,0,
+        0,0,10,80,1,0,0,0,12,87,1,0,0,0,14,89,1,0,0,0,16,94,1,0,0,0,18,96,
+        1,0,0,0,20,101,1,0,0,0,22,116,1,0,0,0,24,118,1,0,0,0,26,120,1,0,
+        0,0,28,122,1,0,0,0,30,124,1,0,0,0,32,129,1,0,0,0,34,36,3,2,1,0,35,
         34,1,0,0,0,36,39,1,0,0,0,37,35,1,0,0,0,37,38,1,0,0,0,38,40,1,0,0,
-        0,39,37,1,0,0,0,40,41,5,0,0,1,41,1,1,0,0,0,42,53,3,4,2,0,43,53,3,
-        6,3,0,44,53,3,8,4,0,45,53,3,10,5,0,46,53,3,14,7,0,47,53,3,16,8,0,
-        48,53,3,18,9,0,49,53,3,20,10,0,50,53,3,30,15,0,51,53,3,32,16,0,52,
-        42,1,0,0,0,52,43,1,0,0,0,52,44,1,0,0,0,52,45,1,0,0,0,52,46,1,0,0,
-        0,52,47,1,0,0,0,52,48,1,0,0,0,52,49,1,0,0,0,52,50,1,0,0,0,52,51,
-        1,0,0,0,53,3,1,0,0,0,54,55,5,6,0,0,55,56,5,1,0,0,56,57,5,26,0,0,
-        57,58,5,2,0,0,58,59,3,26,13,0,59,60,5,2,0,0,60,61,3,28,14,0,61,62,
-        5,3,0,0,62,5,1,0,0,0,63,64,5,9,0,0,64,65,5,1,0,0,65,66,5,26,0,0,
-        66,67,5,2,0,0,67,68,3,24,12,0,68,69,5,2,0,0,69,70,5,28,0,0,70,71,
-        5,3,0,0,71,7,1,0,0,0,72,73,5,8,0,0,73,74,5,1,0,0,74,75,5,26,0,0,
-        75,76,5,2,0,0,76,77,3,12,6,0,77,78,5,3,0,0,78,9,1,0,0,0,79,80,5,
-        7,0,0,80,81,5,1,0,0,81,82,5,26,0,0,82,83,5,2,0,0,83,84,3,12,6,0,
-        84,85,5,3,0,0,85,11,1,0,0,0,86,87,7,0,0,0,87,13,1,0,0,0,88,89,5,
-        10,0,0,89,90,5,1,0,0,90,91,5,26,0,0,91,92,5,3,0,0,92,15,1,0,0,0,
-        93,94,5,11,0,0,94,95,5,1,0,0,95,96,5,26,0,0,96,97,5,3,0,0,97,17,
-        1,0,0,0,98,99,5,7,0,0,99,100,5,1,0,0,100,101,5,26,0,0,101,102,5,
-        3,0,0,102,19,1,0,0,0,103,104,5,12,0,0,104,105,5,1,0,0,105,106,5,
-        26,0,0,106,107,5,2,0,0,107,108,5,28,0,0,108,114,5,3,0,0,109,110,
-        5,12,0,0,110,111,5,1,0,0,111,112,5,28,0,0,112,114,5,3,0,0,113,103,
-        1,0,0,0,113,109,1,0,0,0,114,21,1,0,0,0,115,116,7,1,0,0,116,23,1,
-        0,0,0,117,118,7,2,0,0,118,25,1,0,0,0,119,120,7,3,0,0,120,27,1,0,
-        0,0,121,122,7,4,0,0,122,29,1,0,0,0,123,124,5,4,0,0,124,125,5,1,0,
-        0,125,126,5,29,0,0,126,127,5,3,0,0,127,31,1,0,0,0,128,129,5,5,0,
-        0,129,130,5,1,0,0,130,131,5,29,0,0,131,132,5,3,0,0,132,33,1,0,0,
-        0,3,37,52,113
+        0,39,37,1,0,0,0,40,41,5,0,0,1,41,1,1,0,0,0,42,54,3,4,2,0,43,54,3,
+        6,3,0,44,54,3,8,4,0,45,54,3,10,5,0,46,54,3,14,7,0,47,54,3,16,8,0,
+        48,54,3,18,9,0,49,54,3,20,10,0,50,54,3,22,11,0,51,54,3,30,15,0,52,
+        54,3,32,16,0,53,42,1,0,0,0,53,43,1,0,0,0,53,44,1,0,0,0,53,45,1,0,
+        0,0,53,46,1,0,0,0,53,47,1,0,0,0,53,48,1,0,0,0,53,49,1,0,0,0,53,50,
+        1,0,0,0,53,51,1,0,0,0,53,52,1,0,0,0,54,3,1,0,0,0,55,56,5,6,0,0,56,
+        57,5,1,0,0,57,58,5,26,0,0,58,59,5,2,0,0,59,60,3,26,13,0,60,61,5,
+        2,0,0,61,62,3,28,14,0,62,63,5,3,0,0,63,5,1,0,0,0,64,65,5,9,0,0,65,
+        66,5,1,0,0,66,67,5,26,0,0,67,68,5,2,0,0,68,69,3,24,12,0,69,70,5,
+        2,0,0,70,71,5,28,0,0,71,72,5,3,0,0,72,7,1,0,0,0,73,74,5,8,0,0,74,
+        75,5,1,0,0,75,76,5,26,0,0,76,77,5,2,0,0,77,78,3,12,6,0,78,79,5,3,
+        0,0,79,9,1,0,0,0,80,81,5,7,0,0,81,82,5,1,0,0,82,83,5,26,0,0,83,84,
+        5,2,0,0,84,85,3,12,6,0,85,86,5,3,0,0,86,11,1,0,0,0,87,88,7,0,0,0,
+        88,13,1,0,0,0,89,90,5,10,0,0,90,91,5,1,0,0,91,92,5,26,0,0,92,93,
+        5,3,0,0,93,15,1,0,0,0,94,95,5,11,0,0,95,17,1,0,0,0,96,97,5,11,0,
+        0,97,98,5,1,0,0,98,99,5,26,0,0,99,100,5,3,0,0,100,19,1,0,0,0,101,
+        102,5,7,0,0,102,103,5,1,0,0,103,104,5,26,0,0,104,105,5,3,0,0,105,
+        21,1,0,0,0,106,107,5,12,0,0,107,108,5,1,0,0,108,109,5,26,0,0,109,
+        110,5,2,0,0,110,111,5,28,0,0,111,117,5,3,0,0,112,113,5,12,0,0,113,
+        114,5,1,0,0,114,115,5,28,0,0,115,117,5,3,0,0,116,106,1,0,0,0,116,
+        112,1,0,0,0,117,23,1,0,0,0,118,119,7,1,0,0,119,25,1,0,0,0,120,121,
+        7,2,0,0,121,27,1,0,0,0,122,123,7,3,0,0,123,29,1,0,0,0,124,125,5,
+        4,0,0,125,126,5,1,0,0,126,127,5,29,0,0,127,128,5,3,0,0,128,31,1,
+        0,0,0,129,130,5,5,0,0,130,131,5,1,0,0,131,132,5,29,0,0,132,133,5,
+        3,0,0,133,33,1,0,0,0,3,37,53,116
     ]
 
 class RPG_GamesParser ( Parser ):
@@ -85,10 +85,10 @@ class RPG_GamesParser ( Parser ):
     RULE_removeInventory = 5
     RULE_item = 6
     RULE_inInventory = 7
-    RULE_summary = 8
-    RULE_poof = 9
-    RULE_diceRoll = 10
-    RULE_weapon = 11
+    RULE_listplayer = 8
+    RULE_summary = 9
+    RULE_poof = 10
+    RULE_diceRoll = 11
     RULE_stat = 12
     RULE_race = 13
     RULE_classes = 14
@@ -97,8 +97,8 @@ class RPG_GamesParser ( Parser ):
 
     ruleNames =  [ "program", "statement", "playerDecl", "statsUpdate", 
                    "addInventory", "removeInventory", "item", "inInventory", 
-                   "summary", "poof", "diceRoll", "weapon", "stat", "race", 
-                   "classes", "save", "load" ]
+                   "listplayer", "summary", "poof", "diceRoll", "stat", 
+                   "race", "classes", "save", "load" ]
 
     EOF = Token.EOF
     T__0=1
@@ -233,6 +233,10 @@ class RPG_GamesParser ( Parser ):
             return self.getTypedRuleContext(RPG_GamesParser.InInventoryContext,0)
 
 
+        def listplayer(self):
+            return self.getTypedRuleContext(RPG_GamesParser.ListplayerContext,0)
+
+
         def summary(self):
             return self.getTypedRuleContext(RPG_GamesParser.SummaryContext,0)
 
@@ -278,7 +282,7 @@ class RPG_GamesParser ( Parser ):
         localctx = RPG_GamesParser.StatementContext(self, self._ctx, self.state)
         self.enterRule(localctx, 2, self.RULE_statement)
         try:
-            self.state = 52
+            self.state = 53
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,1,self._ctx)
             if la_ == 1:
@@ -314,30 +318,36 @@ class RPG_GamesParser ( Parser ):
             elif la_ == 6:
                 self.enterOuterAlt(localctx, 6)
                 self.state = 47
-                self.summary()
+                self.listplayer()
                 pass
 
             elif la_ == 7:
                 self.enterOuterAlt(localctx, 7)
                 self.state = 48
-                self.poof()
+                self.summary()
                 pass
 
             elif la_ == 8:
                 self.enterOuterAlt(localctx, 8)
                 self.state = 49
-                self.diceRoll()
+                self.poof()
                 pass
 
             elif la_ == 9:
                 self.enterOuterAlt(localctx, 9)
                 self.state = 50
-                self.save()
+                self.diceRoll()
                 pass
 
             elif la_ == 10:
                 self.enterOuterAlt(localctx, 10)
                 self.state = 51
+                self.save()
+                pass
+
+            elif la_ == 11:
+                self.enterOuterAlt(localctx, 11)
+                self.state = 52
                 self.load()
                 pass
 
@@ -398,21 +408,21 @@ class RPG_GamesParser ( Parser ):
         self.enterRule(localctx, 4, self.RULE_playerDecl)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 54
-            self.match(RPG_GamesParser.CREATE)
             self.state = 55
-            self.match(RPG_GamesParser.T__0)
+            self.match(RPG_GamesParser.CREATE)
             self.state = 56
-            self.match(RPG_GamesParser.NAME)
+            self.match(RPG_GamesParser.T__0)
             self.state = 57
-            self.match(RPG_GamesParser.T__1)
+            self.match(RPG_GamesParser.NAME)
             self.state = 58
-            self.race()
-            self.state = 59
             self.match(RPG_GamesParser.T__1)
+            self.state = 59
+            self.race()
             self.state = 60
-            self.classes()
+            self.match(RPG_GamesParser.T__1)
             self.state = 61
+            self.classes()
+            self.state = 62
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -469,21 +479,21 @@ class RPG_GamesParser ( Parser ):
         self.enterRule(localctx, 6, self.RULE_statsUpdate)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 63
-            self.match(RPG_GamesParser.UPDATE)
             self.state = 64
-            self.match(RPG_GamesParser.T__0)
+            self.match(RPG_GamesParser.UPDATE)
             self.state = 65
-            self.match(RPG_GamesParser.NAME)
+            self.match(RPG_GamesParser.T__0)
             self.state = 66
-            self.match(RPG_GamesParser.T__1)
+            self.match(RPG_GamesParser.NAME)
             self.state = 67
-            self.stat()
-            self.state = 68
             self.match(RPG_GamesParser.T__1)
+            self.state = 68
+            self.stat()
             self.state = 69
-            self.match(RPG_GamesParser.NUMBER)
+            self.match(RPG_GamesParser.T__1)
             self.state = 70
+            self.match(RPG_GamesParser.NUMBER)
+            self.state = 71
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -537,17 +547,17 @@ class RPG_GamesParser ( Parser ):
         self.enterRule(localctx, 8, self.RULE_addInventory)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 72
-            self.match(RPG_GamesParser.GET)
             self.state = 73
-            self.match(RPG_GamesParser.T__0)
+            self.match(RPG_GamesParser.GET)
             self.state = 74
-            self.match(RPG_GamesParser.NAME)
+            self.match(RPG_GamesParser.T__0)
             self.state = 75
-            self.match(RPG_GamesParser.T__1)
+            self.match(RPG_GamesParser.NAME)
             self.state = 76
-            self.item()
+            self.match(RPG_GamesParser.T__1)
             self.state = 77
+            self.item()
+            self.state = 78
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -601,17 +611,17 @@ class RPG_GamesParser ( Parser ):
         self.enterRule(localctx, 10, self.RULE_removeInventory)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 79
-            self.match(RPG_GamesParser.DEL)
             self.state = 80
-            self.match(RPG_GamesParser.T__0)
+            self.match(RPG_GamesParser.DEL)
             self.state = 81
-            self.match(RPG_GamesParser.NAME)
+            self.match(RPG_GamesParser.T__0)
             self.state = 82
-            self.match(RPG_GamesParser.T__1)
+            self.match(RPG_GamesParser.NAME)
             self.state = 83
-            self.item()
+            self.match(RPG_GamesParser.T__1)
             self.state = 84
+            self.item()
+            self.state = 85
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -662,7 +672,7 @@ class RPG_GamesParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 86
+            self.state = 87
             _la = self._input.LA(1)
             if not(_la==26 or _la==27):
                 self._errHandler.recoverInline(self)
@@ -717,14 +727,61 @@ class RPG_GamesParser ( Parser ):
         self.enterRule(localctx, 14, self.RULE_inInventory)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 88
-            self.match(RPG_GamesParser.PRINTINV)
             self.state = 89
-            self.match(RPG_GamesParser.T__0)
+            self.match(RPG_GamesParser.PRINTINV)
             self.state = 90
-            self.match(RPG_GamesParser.NAME)
+            self.match(RPG_GamesParser.T__0)
             self.state = 91
+            self.match(RPG_GamesParser.NAME)
+            self.state = 92
             self.match(RPG_GamesParser.T__2)
+        except RecognitionException as re:
+            localctx.exception = re
+            self._errHandler.reportError(self, re)
+            self._errHandler.recover(self, re)
+        finally:
+            self.exitRule()
+        return localctx
+
+
+    class ListplayerContext(ParserRuleContext):
+        __slots__ = 'parser'
+
+        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
+            super().__init__(parent, invokingState)
+            self.parser = parser
+
+        def PRINTCAR(self):
+            return self.getToken(RPG_GamesParser.PRINTCAR, 0)
+
+        def getRuleIndex(self):
+            return RPG_GamesParser.RULE_listplayer
+
+        def enterRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "enterListplayer" ):
+                listener.enterListplayer(self)
+
+        def exitRule(self, listener:ParseTreeListener):
+            if hasattr( listener, "exitListplayer" ):
+                listener.exitListplayer(self)
+
+        def accept(self, visitor:ParseTreeVisitor):
+            if hasattr( visitor, "visitListplayer" ):
+                return visitor.visitListplayer(self)
+            else:
+                return visitor.visitChildren(self)
+
+
+
+
+    def listplayer(self):
+
+        localctx = RPG_GamesParser.ListplayerContext(self, self._ctx, self.state)
+        self.enterRule(localctx, 16, self.RULE_listplayer)
+        try:
+            self.enterOuterAlt(localctx, 1)
+            self.state = 94
+            self.match(RPG_GamesParser.PRINTCAR)
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -770,16 +827,16 @@ class RPG_GamesParser ( Parser ):
     def summary(self):
 
         localctx = RPG_GamesParser.SummaryContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 16, self.RULE_summary)
+        self.enterRule(localctx, 18, self.RULE_summary)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 93
-            self.match(RPG_GamesParser.PRINTCAR)
-            self.state = 94
-            self.match(RPG_GamesParser.T__0)
-            self.state = 95
-            self.match(RPG_GamesParser.NAME)
             self.state = 96
+            self.match(RPG_GamesParser.PRINTCAR)
+            self.state = 97
+            self.match(RPG_GamesParser.T__0)
+            self.state = 98
+            self.match(RPG_GamesParser.NAME)
+            self.state = 99
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -826,16 +883,16 @@ class RPG_GamesParser ( Parser ):
     def poof(self):
 
         localctx = RPG_GamesParser.PoofContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 18, self.RULE_poof)
+        self.enterRule(localctx, 20, self.RULE_poof)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 98
-            self.match(RPG_GamesParser.DEL)
-            self.state = 99
-            self.match(RPG_GamesParser.T__0)
-            self.state = 100
-            self.match(RPG_GamesParser.NAME)
             self.state = 101
+            self.match(RPG_GamesParser.DEL)
+            self.state = 102
+            self.match(RPG_GamesParser.T__0)
+            self.state = 103
+            self.match(RPG_GamesParser.NAME)
+            self.state = 104
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -921,101 +978,42 @@ class RPG_GamesParser ( Parser ):
     def diceRoll(self):
 
         localctx = RPG_GamesParser.DiceRollContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 20, self.RULE_diceRoll)
+        self.enterRule(localctx, 22, self.RULE_diceRoll)
         try:
-            self.state = 113
+            self.state = 116
             self._errHandler.sync(self)
             la_ = self._interp.adaptivePredict(self._input,2,self._ctx)
             if la_ == 1:
                 localctx = RPG_GamesParser.RollWithNameContext(self, localctx)
                 self.enterOuterAlt(localctx, 1)
-                self.state = 103
-                self.match(RPG_GamesParser.DICEROLL)
-                self.state = 104
-                self.match(RPG_GamesParser.T__0)
-                self.state = 105
-                self.match(RPG_GamesParser.NAME)
                 self.state = 106
-                self.match(RPG_GamesParser.T__1)
+                self.match(RPG_GamesParser.DICEROLL)
                 self.state = 107
-                self.match(RPG_GamesParser.NUMBER)
+                self.match(RPG_GamesParser.T__0)
                 self.state = 108
+                self.match(RPG_GamesParser.NAME)
+                self.state = 109
+                self.match(RPG_GamesParser.T__1)
+                self.state = 110
+                self.match(RPG_GamesParser.NUMBER)
+                self.state = 111
                 self.match(RPG_GamesParser.T__2)
                 pass
 
             elif la_ == 2:
                 localctx = RPG_GamesParser.RollWithoutNameContext(self, localctx)
                 self.enterOuterAlt(localctx, 2)
-                self.state = 109
-                self.match(RPG_GamesParser.DICEROLL)
-                self.state = 110
-                self.match(RPG_GamesParser.T__0)
-                self.state = 111
-                self.match(RPG_GamesParser.NUMBER)
                 self.state = 112
+                self.match(RPG_GamesParser.DICEROLL)
+                self.state = 113
+                self.match(RPG_GamesParser.T__0)
+                self.state = 114
+                self.match(RPG_GamesParser.NUMBER)
+                self.state = 115
                 self.match(RPG_GamesParser.T__2)
                 pass
 
 
-        except RecognitionException as re:
-            localctx.exception = re
-            self._errHandler.reportError(self, re)
-            self._errHandler.recover(self, re)
-        finally:
-            self.exitRule()
-        return localctx
-
-
-    class WeaponContext(ParserRuleContext):
-        __slots__ = 'parser'
-
-        def __init__(self, parser, parent:ParserRuleContext=None, invokingState:int=-1):
-            super().__init__(parent, invokingState)
-            self.parser = parser
-
-        def SWORD(self):
-            return self.getToken(RPG_GamesParser.SWORD, 0)
-
-        def BOW(self):
-            return self.getToken(RPG_GamesParser.BOW, 0)
-
-        def STAFF(self):
-            return self.getToken(RPG_GamesParser.STAFF, 0)
-
-        def getRuleIndex(self):
-            return RPG_GamesParser.RULE_weapon
-
-        def enterRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "enterWeapon" ):
-                listener.enterWeapon(self)
-
-        def exitRule(self, listener:ParseTreeListener):
-            if hasattr( listener, "exitWeapon" ):
-                listener.exitWeapon(self)
-
-        def accept(self, visitor:ParseTreeVisitor):
-            if hasattr( visitor, "visitWeapon" ):
-                return visitor.visitWeapon(self)
-            else:
-                return visitor.visitChildren(self)
-
-
-
-
-    def weapon(self):
-
-        localctx = RPG_GamesParser.WeaponContext(self, self._ctx, self.state)
-        self.enterRule(localctx, 22, self.RULE_weapon)
-        self._la = 0 # Token type
-        try:
-            self.enterOuterAlt(localctx, 1)
-            self.state = 115
-            _la = self._input.LA(1)
-            if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 57344) != 0)):
-                self._errHandler.recoverInline(self)
-            else:
-                self._errHandler.reportMatch(self)
-                self.consume()
         except RecognitionException as re:
             localctx.exception = re
             self._errHandler.reportError(self, re)
@@ -1071,7 +1069,7 @@ class RPG_GamesParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 117
+            self.state = 118
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 983040) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1130,7 +1128,7 @@ class RPG_GamesParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 119
+            self.state = 120
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 7340032) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1189,7 +1187,7 @@ class RPG_GamesParser ( Parser ):
         self._la = 0 # Token type
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 121
+            self.state = 122
             _la = self._input.LA(1)
             if not((((_la) & ~0x3f) == 0 and ((1 << _la) & 58720256) != 0)):
                 self._errHandler.recoverInline(self)
@@ -1241,13 +1239,13 @@ class RPG_GamesParser ( Parser ):
         self.enterRule(localctx, 30, self.RULE_save)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 123
-            self.match(RPG_GamesParser.T__3)
             self.state = 124
-            self.match(RPG_GamesParser.T__0)
+            self.match(RPG_GamesParser.T__3)
             self.state = 125
-            self.match(RPG_GamesParser.STRING)
+            self.match(RPG_GamesParser.T__0)
             self.state = 126
+            self.match(RPG_GamesParser.STRING)
+            self.state = 127
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re
@@ -1294,13 +1292,13 @@ class RPG_GamesParser ( Parser ):
         self.enterRule(localctx, 32, self.RULE_load)
         try:
             self.enterOuterAlt(localctx, 1)
-            self.state = 128
-            self.match(RPG_GamesParser.T__4)
             self.state = 129
-            self.match(RPG_GamesParser.T__0)
+            self.match(RPG_GamesParser.T__4)
             self.state = 130
-            self.match(RPG_GamesParser.STRING)
+            self.match(RPG_GamesParser.T__0)
             self.state = 131
+            self.match(RPG_GamesParser.STRING)
+            self.state = 132
             self.match(RPG_GamesParser.T__2)
         except RecognitionException as re:
             localctx.exception = re

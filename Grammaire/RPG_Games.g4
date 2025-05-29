@@ -19,18 +19,14 @@ statement: playerDecl
 | addInventory
 | removeInventory
 | inInventory
+| listplayer
 | summary
 | poof
 | diceRoll 
 | save
-| load; //assignement
+| load;
 
-// un id(nom de variable) = une valeur entière
-// assignement: ID EQ NUMBER;
 
-// fonction declaration
-
-//playerDecl:  CREATE '(' NAME ',' hp ',' strength ',' intelligence ',' agility',' weapon')'; 
 playerDecl:  CREATE '(' NAME ',' race ',' classes ')'; 
 
 statsUpdate: UPDATE '(' NAME ',' stat ',' NUMBER ')';
@@ -43,16 +39,16 @@ item: NAME | ITEM;
 
 inInventory: PRINTINV '(' NAME ')';
 
+listplayer: PRINTCAR;
+
 summary: PRINTCAR '(' NAME ')';
 
 poof: DEL '(' NAME ')';
 
 diceRoll
-    : 'ROLL' '(' NAME ',' NUMBER ')'     # RollWithName
-    | 'ROLL' '(' NUMBER ')'              # RollWithoutName
+    : DICEROLL '(' NAME ',' NUMBER ')'     # RollWithName
+    | DICEROLL '(' NUMBER ')'              # RollWithoutName
     ;
-
-weapon: SWORD | BOW | STAFF;
 
 stat: STRENGTH | INTELLIGENCE | AGILITY | HP;
 
@@ -64,7 +60,7 @@ save: 'SAVE' '(' STRING ')';
 
 load: 'LOAD' '(' STRING ')';
 
-
+// weapon: SWORD | BOW | STAFF;
 // strength: NUMBER;
 // agility : NUMBER;
 // intelligence: NUMBER;

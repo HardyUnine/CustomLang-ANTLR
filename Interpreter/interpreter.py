@@ -28,20 +28,11 @@ class RPGInterpreter(RPG_GamesVisitor):
         race = ctx.race().getText()
         classe = ctx.classes().getText()
 
-        stats = self.calculateStatsFromRaceAndClass(race, classe)
-
-        self.player[name] = {
-            'hp': stats['hp'],
-            'strength': stats['strength'],
-            'intelligence': stats['intelligence'],
-            'agility': stats['agility'],
-            'weapon': stats['weapon'],
-            'inventory': {}
-        }
+        self.player[name] = self.calculateStatsFromRaceAndClass(race, classe)
+        self.player[name]['inventory'] = {}
 
         return self.player
 
-    
     def calculateStatsFromRaceAndClass(self, race, classe):
     # Base stats by race
         race_stats = {
@@ -64,16 +55,14 @@ class RPGInterpreter(RPG_GamesVisitor):
         bonus = class_bonus[classe]
 
         return {
+            'race': race,
+            'class': classe,
             'hp': base['hp'] + bonus['hp'],
             'strength': base['strength'] + bonus['strength'],
             'intelligence': base['intelligence'] + bonus['intelligence'],
             'agility': base['agility'] + bonus['agility'],
             'weapon': bonus['weapon']
         }
-
-    
-    def visitWeapon(self, ctx: RPG_GamesParser.WeaponContext):
-        return ctx.getChild(0).getText()
     
     def visitStatsUpdate(self, ctx: RPG_GamesParser.StatsUpdateContext):
         name = ctx.NAME().getText()
@@ -84,18 +73,23 @@ class RPGInterpreter(RPG_GamesVisitor):
             raise ValueError(f"{name} does not exist")
 
         allowed_stats = ['hp', 'strength', 'intelligence', 'agility']
-        if stat in allowed_stats:
-            self.player[name][stat] = value
-            return f"{name}'s {stat} updated to {value}"
-        # raise ValueError(f"Stat '{stat}' cannot be modified")
+        if stat not in allowed_stats:
+            raise ValueError(f"Stat '{stat}' cannot be modified")
+        
+        self.player[name][stat] = value
+        print(f"{name}'s {stat} updated to {value}")    
+        return self.player[name]
+        
     
     def visitAddInventory(self, ctx: RPG_GamesParser.AddInventoryContext):
         name = ctx.NAME().getText()
         if name not in self.player:
             raise ValueError(f"{name} is not a listed player")
+        
         item_token = ctx.item()
         if not item_token:
             raise ValueError("Invalid item name")
+        
         item = item_token.getText()
         if item in self.player[name]['inventory']:
             self.player[name]['inventory'][item] += 1
@@ -121,20 +115,24 @@ class RPGInterpreter(RPG_GamesVisitor):
             raise ValueError(f"{name} is not a listed player")
         inv = ""
         for key, val in self.player[name]['inventory'].items():
-            inv+= f'{key}: {val}\n'
-        # print(f"{name} has:\n{inv if inv != "" else "Nothing!"}")
-        return f"{name} has:\n{inv if inv != "" else "Nothing!"}"
-        
-    
+            inv+= f'\n{key}: {val}'
+        print(f"{name} has:{inv if inv != "" else "\nNothing!"}")
+        return None
+
+    def visitListplayer(self, ctx: RPG_GamesParser.ListplayerContext):
+        for name, attr in self.player.items():
+            print(f"{name}: {attr}")
+        return None
+
     def visitSummary(self, ctx: RPG_GamesParser.SummaryContext):
         name = ctx.NAME().getText()
         if name not in self.player:
             raise ValueError(f"{name} is not a listed player")
         inv = ""
         for key, val in self.player[name].items():
-            inv+= f'{key}: {val}\n'
-        return f"{name} stats:\n{inv}"
-        
+            inv+= f'\n{key}: {val}'
+        print(f"{name} stats:{inv}")
+        return None
 
     def visitPoof(self, ctx: RPG_GamesParser.PoofContext):
         name = ctx.NAME().getText()
@@ -148,24 +146,26 @@ class RPGInterpreter(RPG_GamesVisitor):
         name = ctx.NAME().getText()
         if name not in self.player:
             raise ValueError(f"{name} is not a listed player")
+        
         dice_sides = int(ctx.NUMBER().getText())
         roll = random.randint(1, dice_sides)
         if roll == 1:
-            return f"{name} rolled a {roll} and got a critical fail!"
+            print(f"{name} rolled a {roll} and got a critical fail!")
         elif roll == dice_sides:
-            return f"{name} rolled a {roll} and got a critical success!"
+            print(f"{name} rolled a {roll} and got a critical success!")
         else:
-            return f"{name} rolled a {roll}"
-    
+            print(f"{name} rolled a {roll}")
+        return roll
 
     def visitRollWithoutName(self, ctx: RPG_GamesParser.RollWithoutNameContext):
         dice_sides = int(ctx.NUMBER().getText())
         roll = random.randint(1, dice_sides)
-        return f"You rolled a d{dice_sides} and got {roll}"
+        print(f"You rolled a d{dice_sides} and got {roll}")
+        return roll
     
     def visitSave(self, ctx: RPG_GamesParser.SaveContext):
         filename = ctx.STRING().getText().strip('"')
-        with open(filename, 'w') as f:
+        with open(filename, 'w', encoding="utf-8") as f:
             for name, info in self.player.items():
                 f.write(f"PLAYER:{name}\n")
                 for key, val in info.items():
@@ -176,12 +176,13 @@ class RPGInterpreter(RPG_GamesVisitor):
                     else:
                         f.write(f"{key.upper()}:{val}\n")
                 f.write("END\n")
-        return f"Game saved to {filename}"
+        print(f"Game saved to {filename}")
+        return filename
 
     def visitLoad(self, ctx: RPG_GamesParser.LoadContext):
         filename = ctx.STRING().getText().strip('"')
         try:
-            with open(filename, 'r') as f:
+            with open(filename, 'r', encoding="utf-8") as f:
                 lines = f.readlines()
             self.player = {}
             current_player = None
@@ -189,9 +190,9 @@ class RPGInterpreter(RPG_GamesVisitor):
                 line = line.strip()
                 if line.startswith("PLAYER:"):
                     current_player = line.split(":", 1)[1]
-                    self.player[current_player] = {'inventory': {}}
+                    self.player[current_player] = {}
                 elif line.startswith("INVENTORY:"):
-                    continue
+                    self.player[current_player]['inventory'] = {}
                 elif line.startswith("-"):
                     item, qty = line[1:].split(":")
                     self.player[current_player]['inventory'][item] = int(qty)
@@ -199,8 +200,11 @@ class RPGInterpreter(RPG_GamesVisitor):
                     key, val = line.split(":", 1)
                     self.player[current_player][key.lower()] = int(val) if val.isdigit() else val
         except FileNotFoundError:
-            return f"File '{filename}' not found."
-        return f"Game loaded from {filename}"
+            print(f"File '{filename}' not found.")
+            return 1
+        print(f"Game loaded from {filename}")
+        return filename
+
 
 def run_file(filename, interpreter):
     if not filename.endswith(".rpgg"):
@@ -217,50 +221,49 @@ def run_file(filename, interpreter):
     tokens = CommonTokenStream(lexer)
     parser = RPG_GamesParser(tokens)
     tree = parser.program()
-    interpreter.visit(tree)
+    try:
+        interpreter.visit(tree)
+    except (ValueError, AttributeError) as e:
+        print(f"Incorrect statement: {e}")
+        sys.exit(1)
 
 
 def repl(interpreter):
+    # Infinite loop to continuously accept user input
     while True:
         try:
+            # Prompt the user for input
             line = input("> ")
+        # Handle end of file (EOF) or keyboard interrupt (Ctrl + C) to exit the loop
         except (EOFError, KeyboardInterrupt):
-            break
+            print("Goodbye!")
+            sys.exit(0)
         if not line.strip():
             continue
+
         lexer = RPG_GamesLexer(InputStream(line + "\n"))
         tokens = CommonTokenStream(lexer)
         parser = RPG_GamesParser(tokens)
-        tree = parser.statement()
-        print(interpreter.visit(tree))
+        tree = parser.program()
+        try:
+            interpreter.visit(tree)
+        except (ValueError, AttributeError) as e:
+            print(f"Incorrect statement: {e}")
 
+
+# Main entry point of the program
 if __name__ == "__main__":
     interp = RPGInterpreter()
     if len(sys.argv) > 1:
         run_file(sys.argv[1], interp)
-        repl(interp)
-    else:
-        repl(interp)
-
-
-# # Main entry point of the program
-# if __name__ == "__main__":
-#     # Infinite loop to continuously accept user input
-#     calc = RPGInterpreter()
-#     while True:
-#         try:
-#             # Prompt the user for input
-#             text = input("> ")
-#             # Initialize the lexer with the input text
-#             lexer = RPG_GamesLexer(InputStream(text))
-#             # Create a token stream from the lexer
-#             stream = CommonTokenStream(lexer)
-#             # Initialize the parser with the token stream
-#             parser = RPG_GamesParser(stream)
-#             # Parse the expression to generate the parse tree
-#             tree = parser.statement()
-#             # Visit the parse tree and print the evaluation result
-#             print(calc.visit(tree))
-#         # Handle end of file (EOF) or keyboard interrupt (Ctrl + C) to exit the loop
-#         except (EOFError, KeyboardInterrupt):
-#             break
+        #after reading the .rpgg file
+        if len(sys.argv) == 3 and sys.argv[2] == "-s":
+            # python interpreter.py namefile.rpgg -s -> namefile.txt
+            namefile = sys.orig_argv[2].split('.')[0]
+            #store the file name without the extension
+            lex = RPG_GamesLexer(InputStream(f'SAVE ("{namefile}.txt")\n'))
+            tok = CommonTokenStream(lex)
+            par = RPG_GamesParser(tok)
+            interp.visit(par.program())
+        sys.exit(0)
+    repl(interp)

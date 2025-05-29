@@ -80,6 +80,15 @@ class RPG_GamesListener(ParseTreeListener):
         pass
 
 
+    # Enter a parse tree produced by RPG_GamesParser#listplayer.
+    def enterListplayer(self, ctx:RPG_GamesParser.ListplayerContext):
+        pass
+
+    # Exit a parse tree produced by RPG_GamesParser#listplayer.
+    def exitListplayer(self, ctx:RPG_GamesParser.ListplayerContext):
+        pass
+
+
     # Enter a parse tree produced by RPG_GamesParser#summary.
     def enterSummary(self, ctx:RPG_GamesParser.SummaryContext):
         pass
@@ -113,15 +122,6 @@ class RPG_GamesListener(ParseTreeListener):
 
     # Exit a parse tree produced by RPG_GamesParser#RollWithoutName.
     def exitRollWithoutName(self, ctx:RPG_GamesParser.RollWithoutNameContext):
-        pass
-
-
-    # Enter a parse tree produced by RPG_GamesParser#weapon.
-    def enterWeapon(self, ctx:RPG_GamesParser.WeaponContext):
-        pass
-
-    # Exit a parse tree produced by RPG_GamesParser#weapon.
-    def exitWeapon(self, ctx:RPG_GamesParser.WeaponContext):
         pass
 
 

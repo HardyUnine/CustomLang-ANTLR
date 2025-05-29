@@ -49,6 +49,11 @@ class RPG_GamesVisitor(ParseTreeVisitor):
         return self.visitChildren(ctx)
 
 
+    # Visit a parse tree produced by RPG_GamesParser#listplayer.
+    def visitListplayer(self, ctx:RPG_GamesParser.ListplayerContext):
+        return self.visitChildren(ctx)
+
+
     # Visit a parse tree produced by RPG_GamesParser#summary.
     def visitSummary(self, ctx:RPG_GamesParser.SummaryContext):
         return self.visitChildren(ctx)
@@ -66,11 +71,6 @@ class RPG_GamesVisitor(ParseTreeVisitor):
 
     # Visit a parse tree produced by RPG_GamesParser#RollWithoutName.
     def visitRollWithoutName(self, ctx:RPG_GamesParser.RollWithoutNameContext):
-        return self.visitChildren(ctx)
-
-
-    # Visit a parse tree produced by RPG_GamesParser#weapon.
-    def visitWeapon(self, ctx:RPG_GamesParser.WeaponContext):
         return self.visitChildren(ctx)
 
 

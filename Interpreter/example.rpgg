@@ -1,0 +1,9 @@
+SUMMON(Harry, Dwarf, Wizard)
+SUMMON(Leeroy,Human,Paladin)
+SUMMON(Legolas,Elf,Ranger)
+AQUIRE(Leeroy, DragonEgg)
+AQUIRE(Legolas, Apple)
+ALTERATE(Harry, intelligence, 7)
+ROLL(20)
+ROLL(Legolas, 6)
+SUMMAWY
